@@ -54,4 +54,6 @@ jobs:
         run: pnpm install
 
       - name: Run lint
-        run: pnpm lint
+        run: |
+          pnpm lint
+          git diff --exit-code
