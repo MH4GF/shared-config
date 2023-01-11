@@ -1,0 +1,11 @@
+{
+  "name": "@mh4gf/prettier-config",
+  "version": "0.0.1",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@7.24.3",
+  "main": "index.js",
+  "peerDependencies": {
+    "prettier": "^2"
+  }
+}
