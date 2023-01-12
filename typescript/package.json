@@ -10,13 +10,11 @@
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
     "gen": "scaffdog generate"
   },
-  "dependencies": {
-    "scaffdog": "^2.4.0",
-    "typescript": "^4.9.4"
-  },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@mh4gf/prettier-config": "workspace:*",
-    "prettier": "^2.8.2"
+    "prettier": "^2.8.2",
+    "scaffdog": "^2.4.0",
+    "typescript": "^4.9.4"
   }
 }
