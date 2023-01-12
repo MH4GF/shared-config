@@ -34,6 +34,8 @@ questions:
 ````markdown
 # @mh4gf/{{ inputs.value }}
 
+[![npm version](https://badge.fury.io/js/@mh4gf%2F{{ inputs.value }}.svg)](https://badge.fury.io/js/@mh4gf%2F{{ inputs.value }})
+
 {{ inputs.value }}
 
 ## Install
