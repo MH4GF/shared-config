@@ -1,0 +1,38 @@
+name: "Setup dependencies with pnpm"
+inputs:
+  node-version-file:
+    required: true
+  pnpm-version:
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup node env
+      uses: actions/setup-node@v3.5.1
+      with:
+        node-version-file: ${{ inputs.node-version-file }}
+        cache: yarn
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: ${{ inputs.pnpm-version }}
+        run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-setup-pnpm
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-setup-pnpm
+
+    - name: Install dependencies
+      run: pnpm install
