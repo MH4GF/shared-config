@@ -1,6 +1,12 @@
 {
   "name": "@mh4gf/prettier-config",
   "version": "0.1.0",
+  "description": "Prettier config for MH4GF",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mh4gf/shared-config.git",
+    "directory": "typescript/packages/prettier-config"
+  },
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@7.24.3",

@@ -1,5 +1,7 @@
 # @mh4gf/prettier-config
 
+Prettier config for MH4GF
+
 ## Install
 
 ```bash
