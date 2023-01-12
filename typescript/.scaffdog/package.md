@@ -13,6 +13,12 @@ questions:
 {
   "name": "@mh4gf/{{ inputs.value }}",
   "version": "0.0.1",
+  "description": "{{ inputs.value }}",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mh4gf/shared-config.git",
+    "directory": "typescript/packages/{{ inputs.value }}"
+  },
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@7.24.3",
@@ -27,6 +33,8 @@ questions:
 
 ````markdown
 # @mh4gf/{{ inputs.value }}
+
+{{ inputs.value }}
 
 ## Install
 
