@@ -41,7 +41,7 @@ questions:
 ## Install
 
 ```bash
-pnpm add -D prettier @mh4gf/prettier-config
+pnpm add -D @mh4gf/{{ inputs.value }}
 ```
 ````
 
