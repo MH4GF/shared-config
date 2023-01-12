@@ -16,6 +16,9 @@ questions:
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@7.24.3",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js"
 }
 ```
