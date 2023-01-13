@@ -4,6 +4,8 @@ inputs:
     required: true
   pnpm-version:
     required: true
+  working-directory:
+    required: false
 
 runs:
   using: "composite"
@@ -36,3 +38,4 @@ runs:
     - name: Install dependencies
       run: pnpm install
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
