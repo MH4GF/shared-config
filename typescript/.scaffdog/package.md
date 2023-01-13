@@ -31,7 +31,7 @@ questions:
 
 # `{{ inputs.value }}/README.md`
 
-````markdown
+```markdown
 # @mh4gf/{{ inputs.value }}
 
 [![npm version](https://badge.fury.io/js/@mh4gf%2F{{ inputs.value }}.svg)](https://badge.fury.io/js/@mh4gf%2F{{ inputs.value }})
@@ -40,12 +40,8 @@ questions:
 
 ## Install
 
-```bash
-pnpm add -D @mh4gf/{{ inputs.value }}
+    pnpm add -D @mh4gf/{{ inputs.value }}
 ```
-````
-
-````
 
 # `{{ inputs.value }}/index.js`
 
