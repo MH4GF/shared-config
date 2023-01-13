@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - .github/workflows/typescript-ci.yml
-      - ./.github/composite-actions/**
+      - .github/composite-actions/**
       - typescript/**
       - "!**/README.md"
       - "!**/.gitignore"
