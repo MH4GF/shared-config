@@ -1,0 +1,20 @@
+name: "Setup dependencies with yarn"
+inputs:
+  node-version-file:
+    required: true
+  working-directory:
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup node env 🏗
+      uses: actions/setup-node@v3.5.0
+      with:
+        node-version-file: ${{ inputs.node-version-file }}
+        cache: yarn
+
+    - name: Install dependencies 👨🏻‍💻
+      run: yarn
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
