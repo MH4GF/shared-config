@@ -31,7 +31,7 @@ jobs:
         with:
           node-version-file: "typescript/.node-version"
           pnpm-version: "7.24.3"
-          workling-directory: ./typescript
+          working-directory: ./typescript
 
       - name: Run lint
         run: |
