@@ -1,3 +1,12 @@
+const unusedImportRules = {
+  '@typescript-eslint/no-unused-vars': 'off',
+  'unused-imports/no-unused-imports': 'error',
+  'unused-imports/no-unused-vars': [
+    'warn',
+    { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+  ],
+}
+
 /** @type {import('eslint/lib/shared/types').ConfigData} */
 const config = {
   env: {
@@ -9,7 +18,7 @@ const config = {
     {
       files: '*.{,c,m}{j,t}s{,x}',
       extends: ['plugin:import/recommended'],
-      plugins: ['@typescript-eslint'],
+      plugins: ['@typescript-eslint', 'unused-imports'],
       rules: {
         'import/order': [
           'error',
@@ -22,6 +31,7 @@ const config = {
             },
           },
         ],
+        ...unusedImportRules,
       },
     },
   ],
