@@ -7,6 +7,35 @@ const unusedImportRules = {
   ],
 }
 
+const namingRules = {
+  '@typescript-eslint/naming-convention': [
+    'error',
+    // 変数名は camelCase, PascalCase, UPPER_CASE
+    {
+      selector: 'default',
+      format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+      leadingUnderscore: 'allowSingleOrDouble',
+    },
+    // 引数は基本的に camelCase、ライブラリの仕様で PascalCase になる場合もあるので PascalCase も許可。
+    // _ で始まる引数は未使用引数として利用するので leadingUnderscore を許可。
+    {
+      selector: 'parameter',
+      format: ['camelCase', 'PascalCase'],
+      leadingUnderscore: 'allow',
+    },
+    // 型名は PascalCase
+    {
+      selector: 'typeLike',
+      format: ['PascalCase'],
+    },
+    // オブジェクトのキーは API リクエストの body などで _ や - が利用されることがあるので全て許可
+    {
+      selector: ['classProperty', 'objectLiteralProperty', 'typeProperty'],
+      format: null,
+    },
+  ],
+}
+
 /** @type {import('eslint/lib/shared/types').ConfigData} */
 const config = {
   env: {
@@ -32,6 +61,13 @@ const config = {
           },
         ],
         ...unusedImportRules,
+      },
+    },
+    {
+      files: '*.ts{,x}',
+      plugins: ['@typescript-eslint'],
+      rules: {
+        ...namingRules,
       },
     },
   ],
