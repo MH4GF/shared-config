@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- allow all for object literal methods
+
 ## 0.1.0
 
 ### Minor Changes

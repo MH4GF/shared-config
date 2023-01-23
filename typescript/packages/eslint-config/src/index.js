@@ -30,7 +30,7 @@ const namingRules = {
     },
     // オブジェクトのキーは API リクエストの body などで _ や - が利用されることがあるので全て許可
     {
-      selector: ['classProperty', 'objectLiteralProperty', 'typeProperty'],
+      selector: ['classProperty', 'objectLiteralProperty', 'typeProperty', 'objectLiteralMethod'],
       format: null,
     },
   ],
