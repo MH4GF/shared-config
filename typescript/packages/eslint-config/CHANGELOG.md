@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- use strict config for typescript-eslint
+
 ## 0.2.0
 
 ### Minor Changes

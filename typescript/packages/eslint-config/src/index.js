@@ -47,7 +47,6 @@ const config = {
     {
       files: '*.{,c,m}{j,t}s{,x}',
       extends: ['plugin:import/recommended'],
-      plugins: ['@typescript-eslint', 'unused-imports'],
       rules: {
         'import/order': [
           'error',
@@ -60,14 +59,20 @@ const config = {
             },
           },
         ],
-        ...unusedImportRules,
       },
     },
     {
       files: '*.ts{,x}',
-      plugins: ['@typescript-eslint'],
+      plugins: ['unused-imports'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/strict',
+      ],
       rules: {
+        ...unusedImportRules,
         ...namingRules,
+        '@typescript-eslint/consistent-type-imports': ['error'],
       },
     },
   ],
