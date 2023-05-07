@@ -1,0 +1,16 @@
+name: GitHub Workflows CI
+
+on:
+  push:
+    paths:
+      - .github/**
+      - "!**/README.md"
+      - "!**/.gitignore"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actionlint:
+    uses: ./.github/workflows/_actionlint.yml
