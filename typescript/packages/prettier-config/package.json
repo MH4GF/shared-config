@@ -7,17 +7,17 @@
     "url": "https://github.com/mh4gf/shared-config.git",
     "directory": "typescript/packages/prettier-config"
   },
-  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "license": "MIT",
-  "packageManager": "pnpm@7.24.3",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "main": "index.js",
   "dependencies": {
     "prettier-plugin-packagejson": "^2.4.3"
   },
   "peerDependencies": {
     "prettier": "^2"
+  },
+  "packageManager": "pnpm@7.24.3",
+  "publishConfig": {
+    "access": "public"
   }
 }
