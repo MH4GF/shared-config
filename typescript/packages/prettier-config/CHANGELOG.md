@@ -5,6 +5,7 @@
 ### Minor Changes
 
 - 2f47f8e: feat: add prettier-plugin-packagejson
+
 ## 0.1.2
 
 ### Patch Changes
