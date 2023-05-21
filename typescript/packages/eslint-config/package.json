@@ -1,6 +1,6 @@
 {
   "name": "@mh4gf/eslint-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "eslint-config",
   "repository": {
     "type": "git",
@@ -14,12 +14,12 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unused-imports": "^2.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.32.0",
     "typescript": "^4.9.4"
   },

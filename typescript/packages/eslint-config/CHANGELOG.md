@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- add @typescript-eslint to dependencies
+
 ## 0.3.0
 
 ### Minor Changes
