@@ -6,6 +6,12 @@
 
 - 2f47f8e: feat: add prettier-plugin-packagejson
 
+## 0.1.2
+
+### Patch Changes
+
+- 6421246: chore
+
 ## 0.1.1
 
 ### Patch Changes

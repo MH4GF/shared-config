@@ -1,0 +1,33 @@
+{
+  "name": "@mh4gf/eslint-config",
+  "version": "0.3.0",
+  "description": "eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mh4gf/shared-config.git",
+    "directory": "typescript/packages/eslint-config"
+  },
+  "license": "MIT",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "eslint": "^8.32.0"
+  },
+  "packageManager": "pnpm@7.24.3",
+  "publishConfig": {
+    "access": "public"
+  }
+}
