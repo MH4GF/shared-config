@@ -5,6 +5,7 @@
 Various configuration files used by @mh4gf.
 
 - prettier
+- tsconfig.json
 
 ## Install
 
@@ -26,5 +27,14 @@ Various configuration files used by @mh4gf.
 module.exports = {
   ...require('@mh4gf/configs/prettier'),
   // your overrides
+}
+```
+
+### tsconfig.json
+
+```json
+// in tsconfig.json
+{
+  "extends": "@mh4gf/configs/base.json"
 }
 ```

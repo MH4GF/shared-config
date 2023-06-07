@@ -10,10 +10,12 @@
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "exports": {
-    "./prettier": "./prettier/index.cjs"
+    "./prettier": "./prettier/index.cjs",
+    "./tsconfig/*": "./tsconfig/*"
   },
   "dependencies": {
-    "@mh4gf/prettier-config": "workspace:^0.2.0"
+    "@mh4gf/prettier-config": "workspace:^0.2.0",
+    "@tsconfig/strictest": "^2.0.1"
   },
   "packageManager": "pnpm@7.24.3",
   "publishConfig": {

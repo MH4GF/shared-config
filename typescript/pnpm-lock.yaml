@@ -24,8 +24,10 @@ importers:
   packages/configs:
     specifiers:
       '@mh4gf/prettier-config': workspace:^0.2.0
+      '@tsconfig/strictest': ^2.0.1
     dependencies:
       '@mh4gf/prettier-config': link:../prettier-config
+      '@tsconfig/strictest': 2.0.1
 
   packages/eslint-config:
     specifiers:
@@ -546,6 +548,13 @@ packages:
     dependencies:
       defer-to-connect: 1.1.3
     dev: true
+
+  /@tsconfig/strictest/2.0.1:
+    resolution:
+      {
+        integrity: sha512-7JHHCbyCsGUxLd0pDbp24yz3zjxw2t673W5oAP6HCEdr/UUhaRhYd3SSnUsGCk+VnPVJVA4mXROzbhI+nyIk+w==,
+      }
+    dev: false
 
   /@types/is-ci/3.0.0:
     resolution:
