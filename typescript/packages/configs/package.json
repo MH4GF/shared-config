@@ -14,8 +14,10 @@
     "./tsconfig/*": "./tsconfig/*"
   },
   "dependencies": {
-    "@mh4gf/prettier-config": "workspace:^0.2.0",
-    "@tsconfig/strictest": "^2.0.1"
+    "@mh4gf/prettier-config": "workspace:^0.2.0"
+  },
+  "peerDependencies": {
+    "@tsconfig/strictest": "^2"
   },
   "packageManager": "pnpm@7.24.3",
   "publishConfig": {
