@@ -1,5 +1,12 @@
 # @mh4gf/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- e21fb97: add resolver setting
+- ac3fabc: add parserOptions.project in ts files
+
 ## 0.4.0
 
 ### Minor Changes
