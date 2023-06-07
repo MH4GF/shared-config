@@ -64,6 +64,7 @@ const config = {
     {
       files: '*.ts{,x}',
       plugins: ['unused-imports'],
+      parserOptions: { project: './tsconfig.json' },
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
