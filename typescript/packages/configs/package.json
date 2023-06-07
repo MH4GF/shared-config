@@ -1,0 +1,22 @@
+{
+  "name": "@mh4gf/configs",
+  "version": "0.0.1",
+  "description": "configs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mh4gf/shared-config.git",
+    "directory": "typescript/packages/configs"
+  },
+  "license": "MIT",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "exports": {
+    "./prettier": "./prettier/index.cjs"
+  },
+  "dependencies": {
+    "@mh4gf/prettier-config": "workspace:^0.2.0"
+  },
+  "packageManager": "pnpm@7.24.3",
+  "publishConfig": {
+    "access": "public"
+  }
+}
