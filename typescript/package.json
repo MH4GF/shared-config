@@ -10,10 +10,11 @@
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
     "lint:eslint": "eslint . --fix"
   },
+  "prettier": "@mh4gf/configs/prettier",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
-    "@mh4gf/prettier-config": "workspace:*",
     "eslint": "^8.32.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.2",
