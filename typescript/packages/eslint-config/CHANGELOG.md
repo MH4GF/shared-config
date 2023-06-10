@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- upgrade dependencies
+
 ## 0.5.0
 
 ### Minor Changes

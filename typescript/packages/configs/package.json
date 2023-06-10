@@ -1,6 +1,6 @@
 {
   "name": "@mh4gf/configs",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "configs",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "./tsconfig/*": "./tsconfig/*"
   },
   "dependencies": {
-    "@mh4gf/prettier-config": "workspace:^0.2.0"
+    "@mh4gf/prettier-config": "workspace:^"
   },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
