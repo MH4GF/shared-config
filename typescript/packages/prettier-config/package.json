@@ -1,6 +1,6 @@
 {
   "name": "@mh4gf/prettier-config",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Prettier config for MH4GF",
   "repository": {
     "type": "git",
