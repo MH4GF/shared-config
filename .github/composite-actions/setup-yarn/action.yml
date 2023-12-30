@@ -1,4 +1,4 @@
-name: "Setup dependencies with yarn"
+name: 'Setup dependencies with yarn'
 inputs:
   node-version-file:
     required: true
@@ -6,7 +6,7 @@ inputs:
     required: false
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Setup node env 🏗
       uses: actions/setup-node@v3.5.0

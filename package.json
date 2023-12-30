@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "scripts": {
+    "changeset": "changeset",
     "gen": "scaffdog generate",
     "lint": "run-p lint:*",
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
