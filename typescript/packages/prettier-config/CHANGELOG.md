@@ -1,5 +1,11 @@
 # @mh4gf/prettier-config
 
+## 0.2.2
+
+### Patch Changes
+
+- c54f1dd: update dependencies
+
 ## 0.2.1
 
 ### Patch Changes
