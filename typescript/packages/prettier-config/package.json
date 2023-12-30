@@ -11,7 +11,7 @@
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "main": "index.js",
   "dependencies": {
-    "prettier-plugin-packagejson": "^2.4.3"
+    "prettier-plugin-packagejson": "^2.4.8"
   },
   "peerDependencies": {
     "prettier": "^2"
