@@ -1,4 +1,4 @@
-name: "Setup dependencies with pnpm"
+name: 'Setup dependencies with pnpm'
 inputs:
   node-version-file:
     required: true
@@ -8,7 +8,7 @@ inputs:
     required: false
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Setup node env
       uses: actions/setup-node@v3.5.1
