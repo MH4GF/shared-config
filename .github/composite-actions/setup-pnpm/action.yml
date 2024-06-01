@@ -1,4 +1,5 @@
-name: 'Setup dependencies with pnpm'
+name: setup-pnpm
+description: 'Setup dependencies with pnpm'
 
 inputs:
   working-directory:
