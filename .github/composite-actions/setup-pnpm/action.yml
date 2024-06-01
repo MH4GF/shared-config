@@ -1,41 +1,23 @@
-name: 'Setup dependencies with pnpm'
+name: setup-pnpm
+description: 'Setup dependencies with pnpm'
+
 inputs:
-  node-version-file:
-    required: true
-  pnpm-version:
-    required: true
   working-directory:
     required: false
+    type: string
+    default: '.'
 
 runs:
-  using: 'composite'
+  using: composite
   steps:
-    - name: Setup node env
-      uses: actions/setup-node@v3.5.1
+    - uses: pnpm/action-setup@v3
       with:
-        node-version-file: ${{ inputs.node-version-file }}
-
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2
+        package_json_file: ${{ inputs.working-directory }}/package.json
+    - uses: actions/setup-node@v4
       with:
-        version: ${{ inputs.pnpm-version }}
-        run_install: false
-
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      shell: bash
-      run: |
-        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-    - uses: actions/cache@v3
-      name: Setup pnpm cache
-      with:
-        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-setup-pnpm
-        restore-keys: |
-          ${{ runner.os }}-pnpm-store-setup-pnpm
-
-    - name: Install dependencies
-      run: pnpm install
-      shell: bash
+        node-version-file: ${{ inputs.working-directory }}/.node-version
+        cache: pnpm
+        cache-dependency-path: ${{ inputs.working-directory }}/pnpm-lock.yaml
+    - shell: bash
+      run: pnpm install --frozen-lockfile --prefer-offline
       working-directory: ${{ inputs.working-directory }}
