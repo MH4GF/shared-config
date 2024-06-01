@@ -24,9 +24,6 @@ jobs:
 
       - name: Setup pnpm
         uses: ./.github/composite-actions/setup-pnpm
-        with:
-          node-version-file: '.node-version'
-          pnpm-version: '7.24.3'
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
