@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.0
+
+### Minor Changes
+
+- 0764ce2: add biome configuration
+
 ## 0.3.0
 
 ### Minor Changes
