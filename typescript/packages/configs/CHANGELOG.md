@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.1
+
+### Patch Changes
+
+- 8fd44a9: update biome config
+
 ## 0.4.0
 
 ### Minor Changes
