@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices" // https://docs.renovatebot.com/presets-config/#configbest-practices
+  ],
+  "timezone": "Asia/Tokyo",
+  "packageRules": [
+    {
+      "groupName": "tools",
+      "matchPackageNames": [
+        "actions/setup-node ",
+        "actions/checkout",
+        "pnpm",
+        "scaffdog"
+      ]
+    }
+  ]
+}
