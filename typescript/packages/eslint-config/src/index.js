@@ -45,6 +45,11 @@ const plugin = {
       ...tseslint.configs.strict,
       {
         files: ['**/*.ts{,x}'],
+        settings: {
+          'import/resolver': {
+            typescript: {},
+          },
+        },
         rules: {
           '@typescript-eslint/no-unused-vars': 'off',
           '@typescript-eslint/naming-convention': [
