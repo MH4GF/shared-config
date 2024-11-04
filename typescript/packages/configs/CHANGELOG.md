@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.3.0
+
+### Minor Changes
+
+- ec8ddce: remove prettier config
+
 ## 0.2.3
 
 ### Patch Changes
