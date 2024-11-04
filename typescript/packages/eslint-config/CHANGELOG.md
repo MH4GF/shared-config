@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- f9ac73f: migrate ESLint configuration to Flat Config
+
 ## 0.5.2
 
 ### Patch Changes
