@@ -19,9 +19,32 @@ const plugin = {
         },
       },
       {
+        plugins: {
+          'unused-imports': unusedImports,
+        },
+        rules: {
+          'unused-imports/no-unused-imports': 'error',
+          'unused-imports/no-unused-vars': [
+            'warn',
+            {
+              vars: 'all',
+              varsIgnorePattern: '^_',
+              args: 'after-used',
+              argsIgnorePattern: '^_',
+            },
+          ],
+        },
+      },
+      {
+        files: ['**/*.{,c,m}{j,t}s{,x}'],
+        ...importPlugin.flatConfigs.recommended,
+      },
+    ],
+    typescript: [
+      ...tseslint.configs.recommendedTypeChecked,
+      ...tseslint.configs.strict,
+      {
         files: ['**/*.ts{,x}'],
-        ...tseslint.configs.recommendedTypeChecked,
-        ...tseslint.configs.strict,
         rules: {
           '@typescript-eslint/no-unused-vars': 'off',
           '@typescript-eslint/naming-convention': [
@@ -53,27 +76,6 @@ const plugin = {
           ],
           '@typescript-eslint/consistent-type-imports': ['error'],
         },
-      },
-      {
-        plugins: {
-          'unused-imports': unusedImports,
-        },
-        rules: {
-          'unused-imports/no-unused-imports': 'error',
-          'unused-imports/no-unused-vars': [
-            'warn',
-            {
-              vars: 'all',
-              varsIgnorePattern: '^_',
-              args: 'after-used',
-              argsIgnorePattern: '^_',
-            },
-          ],
-        },
-      },
-      {
-        files: ['**/*.{,c,m}{j,t}s{,x}'],
-        ...importPlugin.flatConfigs.recommended,
       },
     ],
   },
