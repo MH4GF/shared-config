@@ -9,7 +9,7 @@ runs:
   using: 'composite'
   steps:
     - name: Setup node env 🏗
-      uses: actions/setup-node@v3.5.0
+      uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b # v3.5.0
       with:
         node-version-file: ${{ inputs.node-version-file }}
         cache: yarn
