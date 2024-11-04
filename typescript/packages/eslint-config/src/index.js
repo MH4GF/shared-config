@@ -1,8 +1,8 @@
 import js from '@eslint/js'
 import importPlugin from 'eslint-plugin-import'
 import unusedImports from 'eslint-plugin-unused-imports'
-import tseslint from 'typescript-eslint'
 import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 const plugin = {
   meta: {

@@ -8,12 +8,17 @@
     "release": "changeset publish",
     "changeset": "changeset",
     "gen": "scaffdog generate",
+    "fmt": "run-p fmt:*",
+    "fmt:biome": "biome check --write --unsafe .",
+    "fmt:eslint": "eslint . --fix",
     "lint": "run-p lint:*",
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
-    "lint:eslint": "eslint . --fix"
+    "lint:biome": "biome check .",
+    "lint:eslint": "eslint ."
   },
   "prettier": "@mh4gf/configs/prettier",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@changesets/cli": "^2.27.1",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
