@@ -19,9 +19,37 @@ const plugin = {
         },
       },
       {
+        plugins: {
+          'unused-imports': unusedImports,
+        },
+        rules: {
+          'unused-imports/no-unused-imports': 'error',
+          'unused-imports/no-unused-vars': [
+            'warn',
+            {
+              vars: 'all',
+              varsIgnorePattern: '^_',
+              args: 'after-used',
+              argsIgnorePattern: '^_',
+            },
+          ],
+        },
+      },
+      {
+        files: ['**/*.{,c,m}{j,t}s{,x}'],
+        ...importPlugin.flatConfigs.recommended,
+      },
+    ],
+    typescript: [
+      ...tseslint.configs.recommendedTypeChecked,
+      ...tseslint.configs.strict,
+      {
         files: ['**/*.ts{,x}'],
-        ...tseslint.configs.recommendedTypeChecked,
-        ...tseslint.configs.strict,
+        settings: {
+          'import/resolver': {
+            typescript: {},
+          },
+        },
         rules: {
           '@typescript-eslint/no-unused-vars': 'off',
           '@typescript-eslint/naming-convention': [
@@ -52,28 +80,15 @@ const plugin = {
             },
           ],
           '@typescript-eslint/consistent-type-imports': ['error'],
+
+          // tsのnoPropertyAccessFromIndexSignatureと競合するためオフにする
+          // @see: https://typescript-eslint.io/rules/dot-notation/
+          // @see: https://typescriptbook.jp/reference/tsconfig/nopropertyaccessfromindexsignature
+          '@typescript-eslint/dot-notation': 'off',
+
+          // biomeへ移行するためオフにする
+          '@typescript-eslint/no-empty-interface': 'off',
         },
-      },
-      {
-        plugins: {
-          'unused-imports': unusedImports,
-        },
-        rules: {
-          'unused-imports/no-unused-imports': 'error',
-          'unused-imports/no-unused-vars': [
-            'warn',
-            {
-              vars: 'all',
-              varsIgnorePattern: '^_',
-              args: 'after-used',
-              argsIgnorePattern: '^_',
-            },
-          ],
-        },
-      },
-      {
-        files: ['**/*.{,c,m}{j,t}s{,x}'],
-        ...importPlugin.flatConfigs.recommended,
       },
     ],
   },
