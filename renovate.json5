@@ -11,7 +11,8 @@
         "actions/setup-node ",
         "actions/checkout",
         "pnpm",
-        "scaffdog"
+        "scaffdog",
+        "npm-run-all2"
       ]
     }
   ]
