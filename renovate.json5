@@ -3,5 +3,16 @@
   "extends": [
     "config:best-practices" // https://docs.renovatebot.com/presets-config/#configbest-practices
   ],
-  "timezone": "Asia/Tokyo"
+  "timezone": "Asia/Tokyo",
+  "packageRules": [
+    {
+      "groupName": "tools",
+      "matchPackageNames": [
+        "actions/setup-node ",
+        "actions/checkout",
+        "pnpm",
+        "scaffdog"
+      ]
+    }
+  ]
 }
