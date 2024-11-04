@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.1
+
+### Patch Changes
+
+- 05f471a: fix eslint-config
+
 ## 0.6.0
 
 ### Minor Changes
