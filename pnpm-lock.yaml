@@ -10,7 +10,7 @@ importers:
       '@mh4gf/eslint-config': workspace:*
       eslint: ^9.14.0
       npm-run-all2: 5.0.0
-      scaffdog: ^3.0.0
+      scaffdog: 3.0.0
       typescript: ^5.3.3
     devDependencies:
       '@biomejs/biome': 1.9.4
