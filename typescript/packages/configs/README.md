@@ -4,7 +4,6 @@
 
 Various configuration files used by @mh4gf.
 
-- prettier
 - tsconfig.json
 
 ## Install
@@ -12,23 +11,6 @@ Various configuration files used by @mh4gf.
     pnpm add -D @mh4gf/configs
 
 ## usage
-
-### prettier
-
-```json
-// in package.json
-{
-  "prettier": "@mh4gf/configs/prettier"
-}
-```
-
-```js
-// or in .prettierrc.cjs
-module.exports = {
-  ...require('@mh4gf/configs/prettier'),
-  // your overrides
-}
-```
 
 ### tsconfig.json
 
