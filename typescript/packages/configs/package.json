@@ -10,6 +10,7 @@
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "exports": {
+    "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
   "peerDependencies": {
