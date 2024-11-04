@@ -1,87 +1,84 @@
-const unusedImportRules = {
-  '@typescript-eslint/no-unused-vars': 'off',
-  'unused-imports/no-unused-imports': 'error',
-  'unused-imports/no-unused-vars': [
-    'warn',
-    { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-  ],
-}
+import js from '@eslint/js'
+import importPlugin from 'eslint-plugin-import'
+import unusedImports from 'eslint-plugin-unused-imports'
+import tseslint from 'typescript-eslint'
+import globals from 'globals'
 
-const namingRules = {
-  '@typescript-eslint/naming-convention': [
-    'error',
-    // 変数名は camelCase, PascalCase, UPPER_CASE
-    {
-      selector: 'default',
-      format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-      leadingUnderscore: 'allowSingleOrDouble',
-    },
-    // 引数は基本的に camelCase、ライブラリの仕様で PascalCase になる場合もあるので PascalCase も許可。
-    // _ で始まる引数は未使用引数として利用するので leadingUnderscore を許可。
-    {
-      selector: 'parameter',
-      format: ['camelCase', 'PascalCase'],
-      leadingUnderscore: 'allow',
-    },
-    // 型名は PascalCase
-    {
-      selector: 'typeLike',
-      format: ['PascalCase'],
-    },
-    // オブジェクトのキーは API リクエストの body などで _ や - が利用されることがあるので全て許可
-    {
-      selector: ['classProperty', 'objectLiteralProperty', 'typeProperty', 'objectLiteralMethod'],
-      format: null,
-    },
-  ],
-}
-
-/** @type {import('eslint/lib/shared/types').ConfigData} */
-const config = {
-  env: {
-    es6: true,
-    node: true,
+const plugin = {
+  meta: {
+    name: '@mh4gf/eslint-config',
   },
-  extends: ['eslint:recommended'],
-  overrides: [
-    {
-      files: '*.{,c,m}{j,t}s{,x}',
-      extends: ['plugin:import/recommended'],
-      rules: {
-        'import/order': [
-          'error',
-          {
-            'newlines-between': 'always',
-            groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
-            alphabetize: {
-              order: 'asc',
-              caseInsensitive: true,
-            },
+  configs: {
+    recommended: [
+      js.configs.recommended,
+      {
+        languageOptions: {
+          globals: {
+            ...globals.node,
           },
-        ],
-      },
-    },
-    {
-      files: '*.ts{,x}',
-      plugins: ['unused-imports'],
-      parserOptions: { project: './tsconfig.json' },
-      settings: {
-        'import/resolver': {
-          typescript: {},
         },
       },
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:@typescript-eslint/strict',
-      ],
-      rules: {
-        ...unusedImportRules,
-        ...namingRules,
-        '@typescript-eslint/consistent-type-imports': ['error'],
+      {
+        files: ['**/*.ts{,x}'],
+        ...tseslint.configs.recommendedTypeChecked,
+        ...tseslint.configs.strict,
+        rules: {
+          '@typescript-eslint/no-unused-vars': 'off',
+          '@typescript-eslint/naming-convention': [
+            'error',
+            {
+              selector: 'default',
+              format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+              leadingUnderscore: 'allowSingleOrDouble',
+            },
+            {
+              selector: 'parameter',
+              format: ['camelCase', 'PascalCase'],
+              leadingUnderscore: 'allow',
+            },
+            {
+              selector: 'typeLike',
+              format: ['PascalCase'],
+            },
+            {
+              selector: [
+                'classProperty',
+                'objectLiteralProperty',
+                'typeProperty',
+                'objectLiteralMethod',
+              ],
+
+              format: null,
+            },
+          ],
+          '@typescript-eslint/consistent-type-imports': ['error'],
+        },
       },
-    },
-  ],
+      {
+        plugins: {
+          'unused-imports': unusedImports,
+        },
+        rules: {
+          'unused-imports/no-unused-imports': 'error',
+          'unused-imports/no-unused-vars': [
+            'warn',
+            {
+              vars: 'all',
+              varsIgnorePattern: '^_',
+              args: 'after-used',
+              argsIgnorePattern: '^_',
+            },
+          ],
+        },
+      },
+      {
+        files: ['**/*.{,c,m}{j,t}s{,x}'],
+        ...importPlugin.flatConfigs.recommended,
+      },
+    ],
+  },
+  rules: {},
+  processors: {},
 }
 
-module.exports = config
+export default plugin
