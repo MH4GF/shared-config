@@ -21,7 +21,7 @@
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "eslint": "9.14.0",
-    "npm-run-all2": "5.0.2",
+    "npm-run-all2": "7.0.1",
     "scaffdog": "4.1.0",
     "typescript": "5.6.3"
   },
