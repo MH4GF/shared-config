@@ -1,5 +1,13 @@
 # @mh4gf/eslint-config
 
+## 0.6.2
+
+### Patch Changes
+
+- 86d35eb: fix(deps): update eslint monorepo to v9.15.0
+- 45cf908: fix(deps): update dependency typescript-eslint to v8.15.0
+- 6d129f6: fix(deps): update dependency typescript-eslint to v8.13.0
+
 ## 0.6.1
 
 ### Patch Changes
