@@ -16,7 +16,7 @@
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
   },
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.15.2",
   "publishConfig": {
     "access": "public"
   }
