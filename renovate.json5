@@ -12,7 +12,6 @@
         "actions/checkout",
         "pnpm",
         "scaffdog",
-        "npm-run-all2",
         "typescript",
         "@changesets/cli",
         "node"
