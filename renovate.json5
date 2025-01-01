@@ -12,8 +12,16 @@
         "actions/checkout",
         "pnpm",
         "scaffdog",
-        "npm-run-all2"
-      ]
+        "npm-run-all2",
+        "typescript",
+        "@changesets/cli",
+        "node"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "dependencies",
+      "matchPackageNames": ["globals"]
     }
   ]
 }
