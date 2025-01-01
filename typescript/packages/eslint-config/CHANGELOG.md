@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.3
+
+### Patch Changes
+
+- 0919fab: update dependencies
+
 ## 0.6.2
 
 ### Patch Changes
