@@ -8,10 +8,10 @@
     "release": "changeset publish",
     "changeset": "changeset",
     "gen": "scaffdog generate",
-    "fmt": "run-p fmt:*",
+    "fmt": "pnpm run '/^fmt:.*/'",
     "fmt:biome": "biome check --write --unsafe .",
     "fmt:eslint": "eslint . --fix",
-    "lint": "run-p lint:*",
+    "lint": "pnpm run '/^lint:.*/'",
     "lint:biome": "biome check .",
     "lint:eslint": "eslint ."
   },
@@ -21,7 +21,6 @@
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "eslint": "9.17.0",
-    "npm-run-all2": "7.0.2",
     "scaffdog": "4.1.0",
     "typescript": "5.7.2"
   },
