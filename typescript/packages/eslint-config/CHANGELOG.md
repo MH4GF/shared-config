@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.4
+
+### Patch Changes
+
+- cc85d5b: chore: configure provenance
+
 ## 0.6.3
 
 ### Patch Changes
