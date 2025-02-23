@@ -17,8 +17,6 @@ jobs:
 
       - name: Setup pnpm
         uses: ./.github/composite-actions/setup-pnpm
-        with:
-          working-directory: examples/vite-project
 
       - name: Run lint
         working-directory: examples/vite-project
