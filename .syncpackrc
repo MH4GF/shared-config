@@ -1,0 +1,49 @@
+{
+  "formatRepository": false,
+  "sortFirst": [
+    "name",
+    "version",
+    "description",
+    "keywords",
+    "homepage",
+    "bugs",
+    "repository",
+    "license",
+    "author",
+    "private",
+    "type",
+    "publishConfig",
+    "main",
+    "exports",
+    "bin",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "scripts",
+    "packageManager",
+    "files"
+  ],
+  "sortPackages": true,
+  "semverGroups": [
+    {
+      "label": "Use exact version numbers",
+      "range": "",
+      "dependencyTypes": [
+        "prod",
+        "dev"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "packages": [
+        "**"
+      ]
+    }
+  ],
+  "versionGroups": [
+    {
+      "dependencies": ["$LOCAL"],
+      "isIgnored": true
+    }
+  ]
+}

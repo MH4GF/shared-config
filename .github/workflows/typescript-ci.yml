@@ -2,12 +2,6 @@ name: typescript-ci
 
 on:
   push:
-    paths:
-      - .github/workflows/typescript-ci.yml
-      - .github/composite-actions/**
-      - typescript/**
-      - '!**/README.md'
-      - '!**/.gitignore'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
