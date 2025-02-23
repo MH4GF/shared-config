@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.3
+
+### Patch Changes
+
+- cc85d5b: chore: configure provenance
+
 ## 0.4.2
 
 ### Patch Changes
