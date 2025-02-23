@@ -14,7 +14,9 @@
         "scaffdog",
         "typescript",
         "@changesets/cli",
-        "node"
+        "node",
+        "syncpack",
+        "knip"
       ],
       "automerge": true
     },
