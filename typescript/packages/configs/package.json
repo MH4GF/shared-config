@@ -4,7 +4,7 @@
   "description": "configs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mh4gf/shared-config.git",
+    "url": "https://github.com/MH4GF/shared-config",
     "directory": "typescript/packages/configs"
   },
   "license": "MIT",

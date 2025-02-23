@@ -4,7 +4,7 @@
   "description": "eslint-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mh4gf/shared-config.git",
+    "url": "https://github.com/mh4gf/shared-config",
     "directory": "typescript/packages/eslint-config"
   },
   "license": "MIT",
