@@ -1,0 +1,27 @@
+name: example-project-ci
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Setup pnpm
+        uses: ./.github/composite-actions/setup-pnpm
+
+      - name: Run lint
+        working-directory: examples/vite-project
+        run: pnpm lint
+
+      - name: Run build
+        working-directory: examples/vite-project
+        run: pnpm build

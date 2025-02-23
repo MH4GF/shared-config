@@ -38,5 +38,10 @@
       "semicolons": "asNeeded",
       "quoteStyle": "single"
     }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
   }
 }

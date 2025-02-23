@@ -18,15 +18,31 @@ Various configuration files used by @mh4gf.
 ```json
 // in tsconfig.json
 {
-  "extends": "@mh4gf/configs/base.json"
+  "extends": "@mh4gf/configs/typescript/base.json"
 }
 ```
 
 ### biome.json
 
+For basic configuration:
+
 ```json
 // in biome.json
 {
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["./node_modules/@mh4gf/configs/biome/index.jsonc"]
+}
+```
+
+For React projects:
+
+```json
+// in biome.json
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "./node_modules/@mh4gf/configs/biome/index.jsonc",
+    "./node_modules/@mh4gf/configs/biome/react.jsonc"
+  ]
 }
 ```

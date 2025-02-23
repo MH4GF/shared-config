@@ -96,4 +96,5 @@ const plugin = {
   processors: {},
 }
 
+// biome-ignore lint/style/noDefaultExport: ESLint requires default export for config
 export default plugin
