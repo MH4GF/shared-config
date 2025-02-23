@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.7
+
+### Patch Changes
+
+- fbda9d4: fix: update repository URLs to use git+ protocol for consistency
+
 ## 0.6.6
 
 ### Patch Changes
