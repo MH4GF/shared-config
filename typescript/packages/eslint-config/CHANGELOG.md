@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.8
+
+### Patch Changes
+
+- 70bbb6d: fix: standardize repository URLs to use git+ protocol for consistency
+
 ## 0.6.7
 
 ### Patch Changes
