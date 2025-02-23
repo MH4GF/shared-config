@@ -16,22 +16,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^9.19.0",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "typescript": "~5.7.2",
-    "vite": "^6.1.0"
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "eslint": "9.19.0",
+    "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react-hooks": "5.1.0",
+    "eslint-plugin-react-refresh": "0.4.19",
+    "typescript": "5.7.3",
+    "vite": "6.1.0"
   },
   "packageManager": "pnpm@10.4.1"
 }
