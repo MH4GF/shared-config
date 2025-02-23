@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.6
+
+### Patch Changes
+
+- c65b8f7: Update repository URLs to use consistent casing for GitHub links
+
 ## 0.6.5
 
 ### Patch Changes
