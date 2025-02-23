@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.4
+
+### Patch Changes
+
+- c65b8f7: Update repository URLs to use consistent casing for GitHub links
+
 ## 0.4.3
 
 ### Patch Changes
