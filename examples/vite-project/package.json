@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . && biome check .",
-    "fmt": "biome check . --fix --unsafe",
+    "lint": "pnpm lint:eslint && pnpm lint:biome",
+    "lint:eslint": "eslint .",
+    "lint:biome": "biome check .",
+    "fmt": "pnpm fmt:eslint && pnpm fmt:biome",
+    "fmt:eslint": "eslint . --fix",
+    "fmt:biome": "biome check . --fix --unsafe",
     "preview": "vite preview"
   },
   "dependencies": {
