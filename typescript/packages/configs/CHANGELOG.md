@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.5
+
+### Patch Changes
+
+- fbda9d4: fix: update repository URLs to use git+ protocol for consistency
+
 ## 0.4.4
 
 ### Patch Changes
