@@ -16,7 +16,7 @@ questions:
   "description": "{{ inputs.value }}",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MH4GF/shared-config",
+    "url": "git+https://github.com/MH4GF/shared-config.git",
     "directory": "typescript/packages/{{ inputs.value }}"
   },
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
