@@ -1,0 +1,7 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["typescript/packages/*/src/index.ts", "examples/*/src/main.ts"],
+  "project": ["typescript/packages/*/src/**/*.ts", "examples/*/src/**/*.{ts,tsx}"],
+  "ignore": ["**/*.d.ts", "**/dist/**", "**/node_modules/**"],
+  "ignoreDependencies": ["typescript", "@types/*", "tsup", "vitest"]
+}
