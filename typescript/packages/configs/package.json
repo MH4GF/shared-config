@@ -9,6 +9,9 @@
   },
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
@@ -16,8 +19,5 @@
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
   },
-  "packageManager": "pnpm@10.4.1",
-  "publishConfig": {
-    "access": "public"
-  }
+  "packageManager": "pnpm@10.4.1"
 }
