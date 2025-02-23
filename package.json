@@ -15,7 +15,7 @@
     "lint:biome": "biome check .",
     "lint:eslint": "eslint .",
     "lint:knip": "knip",
-    "lint:example": "pnpm --filter examples/vite-project lint && pnpm --filter examples/vite-project build",
+    "lint:example": "pnpm --filter vite-project lint && pnpm --filter vite-project build",
     "fmt:knip": "knip --fix"
   },
   "devDependencies": {
