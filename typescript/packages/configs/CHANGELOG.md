@@ -1,5 +1,12 @@
 # @mh4gf/configs
 
+## 0.4.2
+
+### Patch Changes
+
+- 3faeddf: feat: enhance biome configuration for React projects
+- 0419382: feat: add JSON parser configuration to allow comments in biome settings
+
 ## 0.4.1
 
 ### Patch Changes
