@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.5
+
+### Patch Changes
+
+- e8ed0a0: fix(deps): update dependency globals to v16
+
 ## 0.6.4
 
 ### Patch Changes
