@@ -1,7 +1,7 @@
 import mh4gfConfig from '@mh4gf/eslint-config'
+import reactPlugin from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import reactPlugin from 'eslint-plugin-react'
 
 // biome-ignore lint/style/noDefaultExport: ESLint requires default export for config
 export default [
