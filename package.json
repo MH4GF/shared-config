@@ -11,11 +11,14 @@
     "fmt": "pnpm run '/^fmt:.*/'",
     "fmt:biome": "biome check --write --unsafe .",
     "fmt:eslint": "eslint . --fix",
+    "fmt:syncpack-fix": "syncpack fix-mismatches",
+    "fmt:syncpack-format": "syncpack format",
     "lint": "pnpm run '/^lint:.*/'",
     "lint:biome": "biome check .",
     "lint:eslint": "eslint .",
     "lint:knip": "knip",
     "lint:example": "pnpm --filter vite-project lint && pnpm --filter vite-project build",
+    "lint:syncpack": "syncpack lint",
     "fmt:knip": "knip --fix"
   },
   "devDependencies": {
@@ -24,6 +27,7 @@
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "@types/node": "22.13.5",
+    "syncpack": "13.0.0",
     "eslint": "9.19.0",
     "knip": "5.44.4",
     "scaffdog": "4.1.0",
