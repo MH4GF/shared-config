@@ -18,7 +18,7 @@ Various configuration files used by @mh4gf.
 ```json
 // in tsconfig.json
 {
-  "extends": "@mh4gf/configs/base.json"
+  "extends": "@mh4gf/configs/typescript/base.json"
 }
 ```
 
