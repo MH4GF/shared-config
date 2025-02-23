@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/composite-actions/setup-pnpm
+        with:
+          working-directory: examples/vite-project
+
+      - name: Run lint
+        working-directory: examples/vite-project
+        run: pnpm lint
+
+      - name: Run build
+        working-directory: examples/vite-project
+        run: pnpm build
