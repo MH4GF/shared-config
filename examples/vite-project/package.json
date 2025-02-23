@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . && biome check .",
-    "fmt": "biome format . --write",
+    "fmt": "biome check . --fix --unsafe",
     "preview": "vite preview"
   },
   "dependencies": {

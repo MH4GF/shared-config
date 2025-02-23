@@ -1,3 +1,13 @@
 {
-  "extends": ["./node_modules/@mh4gf/configs/biome/index.jsonc"]
+  "extends": ["./node_modules/@mh4gf/configs/biome/index.jsonc"],
+  "files": {
+    "ignore": ["tsconfig*.json"]
+  },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noReactSpecificProps": "off"
+      }
+    }
+  }
 }
