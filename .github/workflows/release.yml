@@ -8,11 +8,9 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
-  id-token: write
-  contents: write
-  packages: write
-  pull-requests: write
-  issues: read
+  id-token: write # OpenID Connect token needed for provenance
+  contents: write # to create release (changesets/action)
+  pull-requests: write # to create pull request (changesets/action)
 
 jobs:
   release:
@@ -33,3 +31,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
