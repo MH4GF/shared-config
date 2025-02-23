@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "pnpm lint:eslint && pnpm lint:biome",
+    "lint": "pnpm lint:tsc && pnpm lint:eslint && pnpm lint:biome",
+    "lint:tsc": "tsc --noEmit",
     "lint:eslint": "eslint .",
     "lint:biome": "biome check .",
     "fmt": "pnpm fmt:eslint && pnpm fmt:biome",
