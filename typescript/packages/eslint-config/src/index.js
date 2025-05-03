@@ -45,6 +45,14 @@ const plugin = {
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.strict,
       {
+        languageOptions: {
+          parserOptions: {
+            projectService: true,
+            tsconfigRootDir: import.meta.dirname,
+          },
+        },
+      },
+      {
         files: ['**/*.ts{,x}'],
         settings: {
           'import/resolver': {
@@ -100,6 +108,12 @@ const plugin = {
         },
         rules: {
           ...vitestPlugin.configs.recommended.rules,
+          'vitest/no-restricted-vi-methods': [
+            'error',
+            {
+              mock: "Don't use vi.mock",
+            },
+          ],
         },
         languageOptions: {
           globals: {
