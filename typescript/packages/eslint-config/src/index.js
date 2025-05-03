@@ -20,25 +20,6 @@ const plugin = {
         },
       },
       {
-        files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', '**/__tests__/**/*'],
-        plugins: {
-          vitest: vitestPlugin,
-        },
-        rules: {
-          ...vitestPlugin.configs.recommended.rules,
-        },
-        languageOptions: {
-          globals: {
-            ...vitestPlugin.environments.env.globals,
-          },
-        },
-        settings: {
-          vitest: {
-            typecheck: true,
-          },
-        },
-      },
-      {
         plugins: {
           'unused-imports': unusedImports,
         },
@@ -108,6 +89,27 @@ const plugin = {
 
           // biomeへ移行するためオフにする
           '@typescript-eslint/no-empty-interface': 'off',
+        },
+      },
+    ],
+    vitest: [
+      {
+        files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', '**/__tests__/**/*'],
+        plugins: {
+          vitest: vitestPlugin,
+        },
+        rules: {
+          ...vitestPlugin.configs.recommended.rules,
+        },
+        languageOptions: {
+          globals: {
+            ...vitestPlugin.environments.env.globals,
+          },
+        },
+        settings: {
+          vitest: {
+            typecheck: true,
+          },
         },
       },
     ],
