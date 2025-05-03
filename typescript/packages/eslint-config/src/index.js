@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import vitestPlugin from '@vitest/eslint-plugin'
 import importPlugin from 'eslint-plugin-import'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
@@ -15,6 +16,25 @@ const plugin = {
         languageOptions: {
           globals: {
             ...globals.node,
+          },
+        },
+      },
+      {
+        files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', '**/__tests__/**/*'],
+        plugins: {
+          vitest: vitestPlugin,
+        },
+        rules: {
+          ...vitestPlugin.configs.recommended.rules,
+        },
+        languageOptions: {
+          globals: {
+            ...vitestPlugin.environments.env.globals,
+          },
+        },
+        settings: {
+          vitest: {
+            typecheck: true,
           },
         },
       },
