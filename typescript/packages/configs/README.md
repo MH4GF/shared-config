@@ -46,3 +46,16 @@ For React projects:
   ]
 }
 ```
+
+For Node.js projects:
+
+```json
+// in biome.json
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "./node_modules/@mh4gf/configs/biome/index.jsonc",
+    "./node_modules/@mh4gf/configs/biome/nodejs.jsonc"
+  ]
+}
+```
