@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -16,8 +17,16 @@
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
+  "devDependencies": {
+    "@mh4gf/eslint-config": "workspace:*",
+    "eslint": "9.19.0"
+  },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
+  },
+  "scripts": {
+    "fmt:eslint": "eslint --fix .",
+    "lint:eslint": "eslint ."
   },
   "packageManager": "pnpm@10.5.2"
 }

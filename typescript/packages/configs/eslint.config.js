@@ -8,7 +8,4 @@ export default [
       'import/no-unresolved': 'off',
     },
   },
-  {
-    ignores: ['examples/**/*'],
-  },
 ]
