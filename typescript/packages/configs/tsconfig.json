@@ -1,0 +1,14 @@
+{
+  "extends": "@mh4gf/configs/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./bin",
+    "jsx": "react-jsx",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "**/*.test.ts", "**/*.test.tsx", "vitest.config.ts", "tsup.config.ts"],
+  "exclude": ["node_modules"]
+}

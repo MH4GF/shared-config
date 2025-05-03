@@ -52,6 +52,7 @@ Ink を用いた対話UIにて以下のような操作を実現：
 
 * CLIフレームワーク: [commander](https://github.com/tj/commander.js/)
 * UIライブラリ: [Ink](https://github.com/vadimdemedes/ink)
+* ビルドツール: [tsup](https://github.com/egoist/tsup)
 * テストフレームワーク: [Vitest](https://vitest.dev/)（常にテストを書くこと）
 * 実装言語: TypeScript
 * 提供形式: `@mh4gf/configs` の `bin` に含めて配布
@@ -69,25 +70,27 @@ Ink を用いた対話UIにて以下のような操作を実現：
 * 既存ファイルがある場合は上書き確認
 * `package.json` に script を追記（重複チェック・マージあり）
 
-## ディレクトリ構成（予定）
+## ディレクトリ構成
 
 ```
 .
 └── typescript/packages/configs/
+    ├── src/
+    │   ├── cli.ts
+    │   └── commands/
+    │       └── init/
+    │           ├── ui/
+    │           │   └── InitForm.tsx
+    │           ├── services/
+    │           │   └── configGenerator.ts
+    │           └── templates/
+    │               ├── biome
+    │               └── tsconfig
     └── bin/
-        ├── cli.ts
-        └── commands/
-            └── init/
-                ├── ui/
-                │   └── InitForm.tsx
-                ├── services/
-                │   └── configGenerator.tsx
-                └── templates/
-                    ├── biome
-                    └── tsconfig
+        └── cli.js (実行用エントリーポイント・ビルド成果物)
 ```
 
-※ テストファイルは、各実装ファイルの隣に配置します（例: `InitForm.test.tsx`, `configGenerator.test.tsx`）
+※ テストファイルは、各実装ファイルの隣に配置します（例: `init-form.test.tsx`, `config-generator.test.ts`）
 
 ## テストポリシー
 
@@ -95,19 +98,17 @@ Ink を用いた対話UIにて以下のような操作を実現：
 * `vitest` による高速テストの実行とTDD推奨
 * 実行前後の状態（e.g. ファイルの存在, package.json への追記）を検証
 
-## 実行フロー（参考）
+## 実行フロー
 
 ```mermaid
 graph TD
-  A[npx @mh4gf/shared-config init] --> B[oclif CLI Dispatcher]
+  A[npx @mh4gf/shared-config init] --> B[Commander CLI Dispatcher]
   B --> C[Ink-based UI (InitForm)]
   C --> D{User Selection}
   D -->|Biome| E1[Copy biome.json to project root]
   D -->|tsconfig| E2[Copy tsconfig files]
-  D -->|Workflows| E3[Copy GitHub workflows]
   E1 --> F[Update package.json]
   E2 --> F
-  E3 --> F
 ```
 
 ---

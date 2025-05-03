@@ -17,16 +17,45 @@
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
+  "bin": {
+    "@mh4gf/configs": "./bin/cli.js"
+  },
+  "dependencies": {
+    "commander": "12.0.0",
+    "ink": "4.4.1",
+    "react": "19.0.0"
+  },
   "devDependencies": {
+    "@eslint/compat": "1.2.9",
     "@mh4gf/eslint-config": "workspace:*",
-    "eslint": "9.19.0"
+    "@types/node": "22.13.5",
+    "@types/react": "19.0.8",
+    "eslint": "9.19.0",
+    "ink-testing-library": "3.0.0",
+    "tsup": "8.0.2",
+    "typescript": "5.7.3",
+    "vitest": "1.1.0"
   },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
   },
   "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
     "fmt:eslint": "eslint --fix .",
-    "lint:eslint": "eslint ."
+    "lint:eslint": "eslint .",
+    "start": "node bin/cli.js",
+    "start:init": "node bin/cli.js init",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.5.2",
+  "knip": {
+    "ignore": [
+      "bin/**/*"
+    ],
+    "ignoreDependencies": [
+      "../dist/bin/cli.js"
+    ]
+  }
 }
