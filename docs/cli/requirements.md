@@ -50,7 +50,7 @@ Ink を用いた対話UIにて以下のような操作を実現：
 
 ## 使用技術
 
-* CLIフレームワーク: [oclif](https://oclif.io/)
+* CLIフレームワーク: [commander](https://github.com/tj/commander.js/)
 * UIライブラリ: [Ink](https://github.com/vadimdemedes/ink)
 * テストフレームワーク: [Vitest](https://vitest.dev/)（常にテストを書くこと）
 * 実装言語: TypeScript
