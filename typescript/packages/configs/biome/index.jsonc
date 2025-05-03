@@ -21,7 +21,11 @@
     "enabled": true,
     "rules": {
       "all": true,
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "error"
+      },
       "style": {
+        "noDefaultExport": "error",
         "noImplicitBoolean": "off",
         "useNamingConvention": "off",
         "useFilenamingConvention": {
