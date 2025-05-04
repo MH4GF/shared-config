@@ -25,6 +25,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Error handling: Use typed errors with proper documentation
 - File naming: Use kebab-case for test files (e.g., `component-name.test.tsx`)
 - Follow existing patterns in similar files
+- When lint errors occur, try `pnpm fmt` first as it can automatically fix many issues
 
 ## Git Workflow Guidelines
 - Make meaningful commits for each logical unit of work
