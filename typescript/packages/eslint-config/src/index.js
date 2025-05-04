@@ -101,12 +101,12 @@ const plugin = {
         rules: {
           ...vitestPlugin.configs.recommended.rules,
           'vitest/no-restricted-vi-methods': [
-             'error',
-             {
-               mock: "Don't use vi.mock",
-               spyOn: "Don't use vi.spyOn",
-             },
-           ],
+            'error',
+            {
+              mock: "Don't use vi.mock",
+              spyOn: "Don't use vi.spyOn",
+            },
+          ],
         },
         languageOptions: {
           globals: {
