@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.9
+
+### Patch Changes
+
+- b7cd1b7: Add biome configs for node.js
+
 ## 0.6.8
 
 ### Patch Changes
