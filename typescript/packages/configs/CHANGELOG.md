@@ -1,5 +1,11 @@
 # @mh4gf/configs
 
+## 0.4.6
+
+### Patch Changes
+
+- bfd33f4: Add biome config for node.js
+
 ## 0.4.5
 
 ### Patch Changes
