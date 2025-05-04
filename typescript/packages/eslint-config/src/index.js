@@ -1,6 +1,5 @@
 import js from '@eslint/js'
 import vitestPlugin from '@vitest/eslint-plugin'
-import importPlugin from 'eslint-plugin-import'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
@@ -35,10 +34,6 @@ const plugin = {
             },
           ],
         },
-      },
-      {
-        files: ['**/*.{,c,m}{j,t}s{,x}'],
-        ...importPlugin.flatConfigs.recommended,
       },
     ],
     typescript: [
