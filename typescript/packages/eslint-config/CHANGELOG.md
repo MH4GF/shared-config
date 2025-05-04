@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.10
+
+### Patch Changes
+
+- 16e7eb9: add vitest plugin to eslint rules
+
 ## 0.6.9
 
 ### Patch Changes
