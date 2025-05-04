@@ -44,6 +44,14 @@ const plugin = {
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.strict,
       {
+        languageOptions: {
+          parserOptions: {
+            projectService: true,
+            tsconfigRootDir: import.meta.dirname,
+          },
+        },
+      },
+      {
         files: ['**/*.ts{,x}'],
         settings: {
           'import/resolver': {
