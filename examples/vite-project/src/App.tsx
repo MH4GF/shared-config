@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// eslint-disable-next-line import/no-unresolved
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import './App.css'

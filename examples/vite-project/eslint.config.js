@@ -6,7 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 // biome-ignore lint/style/noDefaultExport: ESLint requires default export for config
 export default [
   {
-    ignores: ['eslint.config.js'],
+    ignores: ['eslint.config.js', 'dist'],
   },
   ...mh4gfConfig.configs.recommended,
   ...mh4gfConfig.configs.typescript,

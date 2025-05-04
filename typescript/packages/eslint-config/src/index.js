@@ -1,5 +1,5 @@
 import js from '@eslint/js'
-import importPlugin from 'eslint-plugin-import'
+import vitestPlugin from '@vitest/eslint-plugin'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
@@ -34,10 +34,6 @@ const plugin = {
             },
           ],
         },
-      },
-      {
-        files: ['**/*.{,c,m}{j,t}s{,x}'],
-        ...importPlugin.flatConfigs.recommended,
       },
     ],
     typescript: [
@@ -88,6 +84,34 @@ const plugin = {
 
           // biomeへ移行するためオフにする
           '@typescript-eslint/no-empty-interface': 'off',
+        },
+      },
+    ],
+    vitest: [
+      {
+        files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}', '**/__tests__/**/*'],
+        plugins: {
+          vitest: vitestPlugin,
+        },
+        rules: {
+          ...vitestPlugin.configs.recommended.rules,
+          'vitest/no-restricted-vi-methods': [
+            'error',
+            {
+              mock: "Don't use vi.mock",
+              spyOn: "Don't use vi.spyOn",
+            },
+          ],
+        },
+        languageOptions: {
+          globals: {
+            ...vitestPlugin.environments.env.globals,
+          },
+        },
+        settings: {
+          vitest: {
+            typecheck: true,
+          },
         },
       },
     ],
