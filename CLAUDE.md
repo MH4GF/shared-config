@@ -6,22 +6,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Lint: `pnpm lint` - Run all linters
 - Format: `pnpm fmt` - Format all code
 - Build: `pnpm build` - Build the project
-- Test: `pnpm test` - Run tests
+- Test: `pnpm test` - Run all tests
+- Test (single file): `vitest run /path/to/file.test.ts` - Run a specific test file
+- Test (watch mode): `pnpm test:watch` - Run tests in watch mode
 - Specific linters:
   - Biome: `pnpm lint:biome` / `pnpm fmt:biome`
   - ESLint: `pnpm lint:eslint` / `pnpm fmt:eslint`
   - Knip: `pnpm lint:knip` / `pnpm fmt:knip`
+  - Syncpack: `pnpm lint:syncpack` / `pnpm fmt:syncpack-fix`
 
 ## Code Style Guidelines
 - Formatting: Space indentation, 100-character line width
 - Semicolons: "as needed" (not required)
 - Quotes: Single quotes preferred
-- Imports: Use organized imports with consistent type imports
-- Naming: Use camelCase for variables, PascalCase for types/components
+- Imports: Organize imports, group by type, use type imports consistently
+- TypeScript: Use strict type-checking, avoid any, prefer interface for API contracts
+- Naming: camelCase for variables/functions, PascalCase for types/components
 - Error handling: Use typed errors with proper documentation
-- File naming: Follow file naming conventions (not strictly case-sensitive)
-  - Test files: Use kebab-case (e.g., `component-name.test.tsx`)
-- When creating PRs, follow existing patterns in similar files
+- File naming: Use kebab-case for test files (e.g., `component-name.test.tsx`)
+- Follow existing patterns in similar files
+
+## Git Workflow Guidelines
+- Make meaningful commits for each logical unit of work
+- Use descriptive commit messages that explain what and why
+- Keep commits focused on a single responsibility 
+- Run tests and linters before committing
 
 ## Task Completion Criteria
 For any implementation task to be considered complete, it must satisfy all of the following conditions:
