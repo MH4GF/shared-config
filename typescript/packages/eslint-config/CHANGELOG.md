@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.11
+
+### Patch Changes
+
+- bdaa57f: eslint: add rule to discourage usage of vi.mocked
+
 ## 0.6.10
 
 ### Patch Changes
