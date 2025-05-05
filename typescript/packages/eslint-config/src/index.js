@@ -99,6 +99,7 @@ const plugin = {
             'error',
             {
               mock: "Don't use vi.mock",
+              mocked: "Don't use vi.mocked",
               spyOn: "Don't use vi.spyOn",
             },
           ],
