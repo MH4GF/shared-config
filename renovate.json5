@@ -8,7 +8,8 @@
     {
       "groupName": "tools",
       "matchPackageNames": [
-        "actions/setup-node ",
+        "@types/node",
+        "actions/setup-node",
         "actions/checkout",
         "actions/stale",
         "pnpm",
