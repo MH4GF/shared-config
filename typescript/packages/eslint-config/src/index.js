@@ -48,33 +48,7 @@ const plugin = {
         },
         rules: {
           '@typescript-eslint/no-unused-vars': 'off',
-          '@typescript-eslint/naming-convention': [
-            'error',
-            {
-              selector: 'default',
-              format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-              leadingUnderscore: 'allowSingleOrDouble',
-            },
-            {
-              selector: 'parameter',
-              format: ['camelCase', 'PascalCase'],
-              leadingUnderscore: 'allow',
-            },
-            {
-              selector: 'typeLike',
-              format: ['PascalCase'],
-            },
-            {
-              selector: [
-                'classProperty',
-                'objectLiteralProperty',
-                'typeProperty',
-                'objectLiteralMethod',
-              ],
-
-              format: null,
-            },
-          ],
+          '@typescript-eslint/naming-convention': 'off',
           '@typescript-eslint/consistent-type-imports': ['error'],
 
           // tsのnoPropertyAccessFromIndexSignatureと競合するためオフにする
