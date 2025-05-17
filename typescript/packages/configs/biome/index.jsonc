@@ -21,6 +21,12 @@
     "enabled": true,
     "rules": {
       "all": true,
+      "nursery": {
+        "useExplicitType": "error"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
+      },
       "style": {
         "noImplicitBoolean": "off",
         "useNamingConvention": "off",
