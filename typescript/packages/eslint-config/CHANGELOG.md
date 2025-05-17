@@ -1,5 +1,11 @@
 # @mh4gf/eslint-config
 
+## 0.6.12
+
+### Patch Changes
+
+- 107e074: Migrate naming convention rules from eslint to biome
+
 ## 0.6.11
 
 ### Patch Changes

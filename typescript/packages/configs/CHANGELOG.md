@@ -1,5 +1,13 @@
 # @mh4gf/configs
 
+## 0.4.7
+
+### Patch Changes
+
+- 107e074: Migrate naming convention rules from eslint to biome
+- 436b696: fix: update linter rules for nursery and complexity categories
+- 0f50824: fix: add erasableSyntaxOnly option to tsconfig
+
 ## 0.4.6
 
 ### Patch Changes
