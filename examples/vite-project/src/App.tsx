@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { type FC, useState } from 'react'
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-export function App() {
+export const App: FC = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -18,7 +18,7 @@ export function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
+        <button type="button" onClick={(): void => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
