@@ -9,9 +9,9 @@
     "@changesets/cli": "2.29.4",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
-    "@types/node": "22.15.19",
+    "@types/node": "22.15.20",
     "eslint": "9.19.0",
-    "knip": "5.56.0",
+    "knip": "5.57.0",
     "scaffdog": "4.1.0",
     "syncpack": "13.0.4",
     "typescript": "5.8.3"
