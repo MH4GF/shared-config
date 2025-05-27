@@ -21,14 +21,14 @@ importers:
         specifier: workspace:*
         version: link:typescript/packages/eslint-config
       '@types/node':
-        specifier: 22.15.21
-        version: 22.15.21
+        specifier: 22.15.23
+        version: 22.15.23
       eslint:
         specifier: 9.19.0
         version: 9.19.0(jiti@2.4.2)
       knip:
         specifier: 5.58.1
-        version: 5.58.1(@types/node@22.15.21)(typescript@5.8.3)
+        version: 5.58.1(@types/node@22.15.23)(typescript@5.8.3)
       scaffdog:
         specifier: 4.1.0
         version: 4.1.0
@@ -65,7 +65,7 @@ importers:
         version: 19.0.3(@types/react@19.0.8)
       '@vitejs/plugin-react-swc':
         specifier: 3.5.0
-        version: 3.5.0(vite@6.1.0(@types/node@22.15.21)(jiti@2.4.2))
+        version: 3.5.0(vite@6.1.0(@types/node@22.15.23)(jiti@2.4.2))
       eslint:
         specifier: 9.19.0
         version: 9.19.0(jiti@2.4.2)
@@ -83,7 +83,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: 6.1.0
-        version: 6.1.0(@types/node@22.15.21)(jiti@2.4.2)
+        version: 6.1.0(@types/node@22.15.23)(jiti@2.4.2)
 
   typescript/packages/configs:
     dependencies:
@@ -797,8 +797,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@22.15.21':
-    resolution: {integrity: sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==}
+  '@types/node@22.15.23':
+    resolution: {integrity: sha512-7Ec1zaFPF4RJ0eXu1YT/xgiebqwqoJz8rYPDi/O2BcZ++Wpt0Kq9cl0eg6NN6bYbPnR67ZLo7St5Q3UK0SnARw==}
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
@@ -3613,7 +3613,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@22.15.21':
+  '@types/node@22.15.23':
     dependencies:
       undici-types: 6.21.0
 
@@ -3759,10 +3759,10 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.7.2':
     optional: true
 
-  '@vitejs/plugin-react-swc@3.5.0(vite@6.1.0(@types/node@22.15.21)(jiti@2.4.2))':
+  '@vitejs/plugin-react-swc@3.5.0(vite@6.1.0(@types/node@22.15.23)(jiti@2.4.2))':
     dependencies:
       '@swc/core': 1.10.18
-      vite: 6.1.0(@types/node@22.15.21)(jiti@2.4.2)
+      vite: 6.1.0(@types/node@22.15.23)(jiti@2.4.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -4986,10 +4986,10 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  knip@5.58.1(@types/node@22.15.21)(typescript@5.8.3):
+  knip@5.58.1(@types/node@22.15.23)(typescript@5.8.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
-      '@types/node': 22.15.21
+      '@types/node': 22.15.23
       fast-glob: 3.3.3
       formatly: 0.2.3
       jiti: 2.4.2
@@ -6076,13 +6076,13 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite@6.1.0(@types/node@22.15.21)(jiti@2.4.2):
+  vite@6.1.0(@types/node@22.15.23)(jiti@2.4.2):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.3
       rollup: 4.34.8
     optionalDependencies:
-      '@types/node': 22.15.21
+      '@types/node': 22.15.23
       fsevents: 2.3.3
       jiti: 2.4.2
 
