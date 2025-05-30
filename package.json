@@ -9,7 +9,7 @@
     "@changesets/cli": "2.29.4",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
-    "@types/node": "22.15.24",
+    "@types/node": "22.15.26",
     "eslint": "9.19.0",
     "knip": "5.59.1",
     "scaffdog": "4.1.0",
