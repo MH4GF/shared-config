@@ -10,7 +10,7 @@
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "@types/node": "22.15.31",
-    "eslint": "9.19.0",
+    "eslint": "9.29.0",
     "knip": "5.61.0",
     "scaffdog": "4.1.0",
     "syncpack": "13.0.4",
