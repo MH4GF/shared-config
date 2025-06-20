@@ -6,7 +6,7 @@
   "private": true,
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@changesets/cli": "2.29.4",
+    "@changesets/cli": "2.29.5",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "@types/node": "22.15.32",
