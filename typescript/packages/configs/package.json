@@ -19,5 +19,5 @@
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
   },
-  "packageManager": "pnpm@10.12.3"
+  "packageManager": "pnpm@10.12.4"
 }
