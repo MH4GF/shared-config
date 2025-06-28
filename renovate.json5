@@ -6,6 +6,8 @@
   "timezone": "Asia/Tokyo",
   "packageRules": [
     {
+      // 開発ツール類: 安全にautomergeできるパッケージ群
+      // CI で biome/eslint/knip/example build が通れば問題ない
       "groupName": "tools",
       "matchPackageNames": [
         "@types/node",
@@ -18,13 +20,19 @@
         "@changesets/cli",
         "node",
         "syncpack",
-        "knip"
+        "knip",
+        "changesets/action",
+        "@vitest/eslint-plugin",
+        "eslint-import-resolver-typescript"
       ],
       "automerge": true
     },
     {
+      // ランタイム依存関係: ESLint設定で使用されているが、CIでチェック済み
+      // eslint実行とexampleビルドが成功すれば安全
       "groupName": "dependencies",
-      "matchPackageNames": ["globals"]
+      "matchPackageNames": ["globals"],
+      "automerge": true
     }
   ]
 }
