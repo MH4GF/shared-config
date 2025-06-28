@@ -1,5 +1,5 @@
 ---
-"@mh4gf/configs": major
+"@mh4gf/configs": minor
 ---
 
 chore(deps): upgrade Biome from v1.9.4 to v2.0.6
