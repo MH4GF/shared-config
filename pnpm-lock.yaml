@@ -21,14 +21,14 @@ importers:
         specifier: workspace:*
         version: link:typescript/packages/eslint-config
       '@types/node':
-        specifier: 22.15.34
-        version: 22.15.34
+        specifier: 22.16.0
+        version: 22.16.0
       eslint:
         specifier: 9.19.0
         version: 9.19.0(jiti@2.4.2)
       knip:
         specifier: 5.61.3
-        version: 5.61.3(@types/node@22.15.34)(typescript@5.8.3)
+        version: 5.61.3(@types/node@22.16.0)(typescript@5.8.3)
       scaffdog:
         specifier: 4.1.0
         version: 4.1.0
@@ -65,7 +65,7 @@ importers:
         version: 19.0.3(@types/react@19.0.8)
       '@vitejs/plugin-react-swc':
         specifier: 3.5.0
-        version: 3.5.0(vite@6.1.0(@types/node@22.15.34)(jiti@2.4.2))
+        version: 3.5.0(vite@6.1.0(@types/node@22.16.0)(jiti@2.4.2))
       eslint:
         specifier: 9.19.0
         version: 9.19.0(jiti@2.4.2)
@@ -83,7 +83,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: 6.1.0
-        version: 6.1.0(@types/node@22.15.34)(jiti@2.4.2)
+        version: 6.1.0(@types/node@22.16.0)(jiti@2.4.2)
 
   typescript/packages/configs:
     dependencies:
@@ -97,8 +97,8 @@ importers:
         specifier: 9.17.0
         version: 9.17.0
       '@vitest/eslint-plugin':
-        specifier: 1.3.3
-        version: 1.3.3(eslint@9.19.0(jiti@2.4.2))(typescript@5.8.3)
+        specifier: 1.3.4
+        version: 1.3.4(eslint@9.19.0(jiti@2.4.2))(typescript@5.8.3)
       eslint-import-resolver-typescript:
         specifier: 4.4.4
         version: 4.4.4(eslint-plugin-import@2.31.0)(eslint@9.19.0(jiti@2.4.2))
@@ -793,8 +793,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@22.15.34':
-    resolution: {integrity: sha512-8Y6E5WUupYy1Dd0II32BsWAx5MWdcnRd8L84Oys3veg1YrYtNtzgO4CFhiBg6MDSjk7Ay36HYOnU7/tuOzIzcw==}
+  '@types/node@22.16.0':
+    resolution: {integrity: sha512-B2egV9wALML1JCpv3VQoQ+yesQKAmNMBIAY7OteVrikcOcAkWm+dGL6qpeCktPjAv6N1JLnhbNiqS35UpFyBsQ==}
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
@@ -957,8 +957,8 @@ packages:
     peerDependencies:
       vite: ^4 || ^5
 
-  '@vitest/eslint-plugin@1.3.3':
-    resolution: {integrity: sha512-zOB4T5f80JXfP5DC2yQl7azRYq8PmGqYle3uxh3a0NnbKc+EaSYSpEcrVAh2r5W97pi3BVv7oRb5NdEQy0cCXA==}
+  '@vitest/eslint-plugin@1.3.4':
+    resolution: {integrity: sha512-EOg8d0jn3BAiKnR55WkFxmxfWA3nmzrbIIuOXyTe6A72duryNgyU+bdBEauA97Aab3ho9kLmAwgPX63Ckj4QEg==}
     peerDependencies:
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
@@ -3636,7 +3636,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@22.15.34':
+  '@types/node@22.16.0':
     dependencies:
       undici-types: 6.21.0
 
@@ -3788,14 +3788,14 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.9.2':
     optional: true
 
-  '@vitejs/plugin-react-swc@3.5.0(vite@6.1.0(@types/node@22.15.34)(jiti@2.4.2))':
+  '@vitejs/plugin-react-swc@3.5.0(vite@6.1.0(@types/node@22.16.0)(jiti@2.4.2))':
     dependencies:
       '@swc/core': 1.10.18
-      vite: 6.1.0(@types/node@22.15.34)(jiti@2.4.2)
+      vite: 6.1.0(@types/node@22.16.0)(jiti@2.4.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitest/eslint-plugin@1.3.3(eslint@9.19.0(jiti@2.4.2))(typescript@5.8.3)':
+  '@vitest/eslint-plugin@1.3.4(eslint@9.19.0(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/utils': 8.31.1(eslint@9.19.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.19.0(jiti@2.4.2)
@@ -5028,10 +5028,10 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  knip@5.61.3(@types/node@22.15.34)(typescript@5.8.3):
+  knip@5.61.3(@types/node@22.16.0)(typescript@5.8.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
-      '@types/node': 22.15.34
+      '@types/node': 22.16.0
       fast-glob: 3.3.3
       formatly: 0.2.4
       jiti: 2.4.2
@@ -6120,13 +6120,13 @@ snapshots:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  vite@6.1.0(@types/node@22.15.34)(jiti@2.4.2):
+  vite@6.1.0(@types/node@22.16.0)(jiti@2.4.2):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.3
       rollup: 4.34.8
     optionalDependencies:
-      '@types/node': 22.15.34
+      '@types/node': 22.16.0
       fsevents: 2.3.3
       jiti: 2.4.2
 
