@@ -23,7 +23,8 @@
         "knip",
         "changesets/action",
         "@vitest/eslint-plugin",
-        "eslint-import-resolver-typescript"
+        "eslint-import-resolver-typescript",
+        "typescript-eslint"
       ],
       "automerge": true
     },
