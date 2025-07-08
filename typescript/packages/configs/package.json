@@ -9,15 +9,49 @@
   },
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "type": "module",
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "shared-config": "./bin/cli.js"
   },
   "exports": {
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
+  "files": [
+    "bin",
+    "biome",
+    "tsconfig",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "postpack": "rm -rf bin"
+  },
+  "dependencies": {
+    "@oclif/core": "^4.0.0",
+    "@oclif/plugin-help": "^6.2.0",
+    "ink": "^4.0.0",
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
+  },
+  "oclif": {
+    "bin": "shared-config",
+    "dirname": "shared-config",
+    "commands": "./bin/commands",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
   "packageManager": "pnpm@10.12.4"
 }
