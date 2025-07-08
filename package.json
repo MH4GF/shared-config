@@ -12,6 +12,7 @@
     "@types/node": "22.16.0",
     "eslint": "9.19.0",
     "knip": "5.61.3",
+    "lefthook": "1.12.0",
     "scaffdog": "4.1.0",
     "syncpack": "13.0.4",
     "typescript": "5.8.3"
@@ -31,6 +32,7 @@
     "lint:example": "pnpm --filter vite-project lint && pnpm --filter vite-project build",
     "lint:knip": "knip",
     "lint:syncpack": "syncpack lint",
+    "prepare": "lefthook install",
     "release": "changeset publish"
   },
   "packageManager": "pnpm@10.12.4"
