@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    lint:
+      run: pnpm lint
+      fail_text: "Linting failed. Please fix the issues and try again."
+      stage_fixed: true
