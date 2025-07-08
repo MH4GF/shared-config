@@ -3,8 +3,12 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Commands
+- Build: `pnpm build` - Build all packages
 - Lint: `pnpm lint` - Run all linters
 - Format: `pnpm fmt` - Format all code
+- Test: `pnpm test` - Run all tests
+- Test with coverage: `pnpm test:coverage` - Run tests with coverage report
+- Test UI: `pnpm test:ui` - Run tests with interactive UI
 - Specific linters:
   - Biome: `pnpm lint:biome` / `pnpm fmt:biome`
   - ESLint: `pnpm lint:eslint` / `pnpm fmt:eslint`
