@@ -24,6 +24,7 @@
     "@oclif/core": "4.0.0"
   },
   "devDependencies": {
+    "tsup": "8.0.0",
     "tsx": "4.0.0",
     "typescript": "5.8.3"
   },
@@ -31,7 +32,7 @@
     "@tsconfig/strictest": "^2"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "dev": "tsx src/cli.ts",
     "postpack": "rm -rf bin"
   },
