@@ -1,16 +1,16 @@
 name: typescript-ci
 
 on:
-  push:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  typescript-lint:
+  lint-and-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -19,7 +19,24 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/composite-actions/setup-pnpm
 
+      - name: Build packages
+        run: pnpm build
+
       - name: Run lint
         run: |
           pnpm lint
           git diff --exit-code
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
+          fail_ci_if_error: false
