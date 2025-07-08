@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -16,8 +17,34 @@
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
+  "bin": {
+    "shared-config": "./bin/cli.js"
+  },
+  "dependencies": {
+    "@oclif/core": "4.0.0"
+  },
+  "devDependencies": {
+    "tsx": "4.0.0",
+    "typescript": "5.8.3"
+  },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
   },
-  "packageManager": "pnpm@10.12.4"
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "postpack": "rm -rf bin"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "files": [
+    "bin",
+    "biome",
+    "tsconfig",
+    "templates"
+  ],
+  "oclif": {
+    "bin": "shared-config",
+    "dirname": "shared-config",
+    "commands": "./bin/commands"
+  }
 }

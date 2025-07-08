@@ -1,8 +1,16 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
-  "entry": ["typescript/packages/*/src/index.ts", "examples/*/src/main.ts"],
-  "project": ["typescript/packages/*/src/**/*.ts", "examples/*/src/**/*.{ts,tsx}"],
-  "ignore": ["**/*.d.ts", "**/dist/**", "**/node_modules/**"],
-  "ignoreDependencies": ["@mh4gf/configs", "eslint-import-resolver-typescript"],
-  "ignoreBinaries": ["build"]
+  "ignore": ["**/*.d.ts", "**/dist/**", "**/node_modules/**", "**/bin/**", ".scaffdog/config.js"],
+  "ignoreDependencies": ["eslint-import-resolver-typescript"],
+  "workspaces": {
+    "typescript/packages/configs": {
+      "entry": ["src/cli.ts"],
+      "project": ["src/**/*.{ts,tsx}"],
+      "ignore": ["src/commands/init.ts"]
+    },
+    "examples/vite-project": {
+      "entry": ["src/main.tsx"],
+      "project": ["src/**/*.{ts,tsx}"]
+    }
+  }
 }
