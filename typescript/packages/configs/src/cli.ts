@@ -2,4 +2,9 @@
 
 import { execute } from '@oclif/core'
 
-await execute({ development: false, dir: import.meta.url })
+try {
+  await execute({ development: false, dir: import.meta.url })
+} catch (error) {
+  console.error('Error:', error)
+  process.exit(1)
+}
