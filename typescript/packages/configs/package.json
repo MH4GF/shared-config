@@ -13,45 +13,38 @@
   "publishConfig": {
     "access": "public"
   },
-  "bin": {
-    "shared-config": "./bin/cli.js"
-  },
   "exports": {
     "./biome/*": "./biome/*",
     "./tsconfig/*": "./tsconfig/*"
   },
+  "bin": {
+    "shared-config": "./bin/cli.js"
+  },
+  "dependencies": {
+    "@oclif/core": "4.0.0"
+  },
+  "devDependencies": {
+    "tsx": "4.0.0",
+    "typescript": "5.8.3"
+  },
+  "peerDependencies": {
+    "@tsconfig/strictest": "^2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "postpack": "rm -rf bin"
+  },
+  "packageManager": "pnpm@10.12.4",
   "files": [
     "bin",
     "biome",
     "tsconfig",
     "templates"
   ],
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsx src/cli.ts",
-    "postpack": "rm -rf bin"
-  },
-  "dependencies": {
-    "@oclif/core": "^4.0.0",
-    "@oclif/plugin-help": "^6.2.0",
-    "ink": "^4.0.0",
-    "react": "^18.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
-  },
-  "peerDependencies": {
-    "@tsconfig/strictest": "^2"
-  },
   "oclif": {
     "bin": "shared-config",
     "dirname": "shared-config",
-    "commands": "./bin/commands",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "packageManager": "pnpm@10.12.4"
+    "commands": "./bin/commands"
+  }
 }
