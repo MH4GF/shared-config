@@ -36,7 +36,7 @@
     "dev": "tsx src/cli.ts",
     "postpack": "rm -rf bin"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "files": [
     "bin",
     "biome",
