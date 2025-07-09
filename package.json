@@ -9,7 +9,7 @@
     "@changesets/cli": "2.29.5",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
-    "@types/node": "22.16.0",
+    "@types/node": "22.16.2",
     "@vitest/coverage-v8": "2.1.8",
     "eslint": "9.19.0",
     "knip": "5.61.3",
