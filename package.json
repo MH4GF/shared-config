@@ -10,14 +10,14 @@
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "@types/node": "22.16.3",
-    "@vitest/coverage-v8": "2.1.8",
+    "@vitest/coverage-v8": "2.1.9",
     "eslint": "9.19.0",
     "knip": "5.61.3",
     "lefthook": "1.12.0",
     "scaffdog": "4.1.0",
     "syncpack": "13.0.4",
     "typescript": "5.8.3",
-    "vitest": "2.1.8"
+    "vitest": "2.1.9"
   },
   "scripts": {
     "build": "pnpm --filter '@mh4gf/*' build",
