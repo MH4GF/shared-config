@@ -21,7 +21,8 @@
     "shared-config": "./bin/cli.js"
   },
   "dependencies": {
-    "@oclif/core": "4.0.0"
+    "@oclif/core": "4.0.0",
+    "neverthrow": "8.2.0"
   },
   "devDependencies": {
     "tsup": "8.0.0",
