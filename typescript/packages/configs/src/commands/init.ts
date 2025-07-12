@@ -72,15 +72,11 @@ export class Init extends Command {
       this.log('   Make sure you are in the root of your project')
     }
 
-    this.log('')
-    this.log('🛠  What do you want to set up?')
-    this.log('   ☐ Biome')
-    this.log('     └─ TypeScript')
-    this.log('     └─ TypeScript + React')
-    this.log('   ☐ TypeScript Config')
-    this.log('     └─ base')
-    this.log('')
-    this.log('💡 Interactive UI will be implemented in the next phase')
-    this.log('   For now, you can use --all or --yes flags')
+    // Import and render the Ink UI
+    const { render } = await import('ink')
+    const { InitForm } = await import('../ui/InitForm.js')
+    const React = await import('react')
+
+    render(React.createElement(InitForm))
   }
 }

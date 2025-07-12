@@ -22,12 +22,17 @@
   },
   "dependencies": {
     "@oclif/core": "4.5.0",
-    "neverthrow": "8.2.0"
+    "ink": "5.1.0",
+    "neverthrow": "8.2.0",
+    "react": "19.0.0"
   },
   "devDependencies": {
+    "@types/react": "19.0.8",
+    "ink-testing-library": "4.0.0",
     "tsup": "8.5.0",
     "tsx": "4.20.3",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
@@ -35,7 +40,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsx src/cli.ts",
-    "postpack": "rm -rf bin"
+    "postpack": "rm -rf bin",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "packageManager": "pnpm@10.13.1",
   "files": [
