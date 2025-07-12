@@ -5,7 +5,7 @@
   "author": "MH4GF <h.miyagi.cnw@gmail.com>",
   "private": true,
   "devDependencies": {
-    "@biomejs/biome": "2.1.0",
+    "@biomejs/biome": "2.1.1",
     "@changesets/cli": "2.29.5",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
