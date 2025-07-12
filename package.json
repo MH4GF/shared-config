@@ -37,7 +37,7 @@
     "lint:syncpack": "syncpack lint",
     "prepare": "lefthook install",
     "release": "changeset publish",
-    "test": "vitest",
+    "test": "vitest run",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui"
   },
