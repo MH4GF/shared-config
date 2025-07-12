@@ -4,9 +4,7 @@
   "ignoreDependencies": ["eslint-import-resolver-typescript"],
   "workspaces": {
     "typescript/packages/configs": {
-      "entry": ["src/cli.ts"],
-      "project": ["src/**/*.{ts,tsx}"],
-      "ignore": ["src/commands/init.ts"]
+      "project": ["src/**/*.{ts,tsx}", "__tests__/**/*.{ts,tsx}"]
     },
     "examples/vite-project": {
       "entry": ["src/main.tsx"],
