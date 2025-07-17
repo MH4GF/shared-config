@@ -64,11 +64,51 @@ Ink を用いた対話 UI にて以下のような操作を実現：
 ## ファイルの処理内容
 
 - `@mh4gf/configs` と、必要なパッケージをインストール
-- 設定ファイルを `templates/` からルートディレクトリにコピー
+- 設定ファイルを生成（extends を使用してパッケージ内の設定を参照）
 - 既存ファイルがある場合は上書き確認
 - `package.json` に script を追記（重複チェック・マージあり）
 
-## フォルダ構成（予定）
+### 生成される設定ファイル例
+
+**biome.json (基本設定)**
+```json
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["./node_modules/@mh4gf/configs/biome/index.jsonc"]
+}
+```
+
+**biome.json (React用)**
+```json
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "./node_modules/@mh4gf/configs/biome/index.jsonc",
+    "./node_modules/@mh4gf/configs/biome/react.jsonc"
+  ]
+}
+```
+
+**tsconfig.json**
+```json
+{
+  "extends": "@mh4gf/configs/typescript/base.json"
+}
+```
+
+**package.json scripts 追加例**
+```json
+{
+  "scripts": {
+    "fmt": "pnpm run '/^fmt:.*/'",
+    "fmt:biome": "biome check --write --unsafe .",
+    "lint": "pnpm run '/^lint:.*/'",
+    "lint:biome": "biome check ."
+  }
+}
+```
+
+## フォルダ構成
 
 ```
 typescript/packages/configs/
@@ -79,10 +119,12 @@ typescript/packages/configs/
 │   │   └── init.ts
 │   └── ui/
 │       └── InitForm.tsx
-├── templates/
-│   ├── biome/
-│   ├── tsconfig/
-│   └── workflows/
+├── biome/
+│   ├── index.jsonc
+│   ├── nodejs.jsonc
+│   └── react.jsonc
+└── typescript/
+    └── base.json
 ```
 
 ## 今後の拡張案
