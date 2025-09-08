@@ -97,8 +97,8 @@ importers:
   typescript/packages/configs:
     dependencies:
       '@oclif/core':
-        specifier: 4.5.0
-        version: 4.5.0
+        specifier: 4.5.3
+        version: 4.5.3
       '@tsconfig/strictest':
         specifier: ^2
         version: 2.0.5
@@ -716,8 +716,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@oclif/core@4.5.0':
-    resolution: {integrity: sha512-UYWyDFNKFyzgXVXO0DHfOvJ/8qpw4yPYe7fOHausDEVU44qjDr90ZnfYTljZPK8dhgMggxiZs9n+TFajnXRp7g==}
+  '@oclif/core@4.5.3':
+    resolution: {integrity: sha512-ISoFlfmsuxJvNKXhabCO4/KqNXDQdLHchZdTPfZbtqAsQbqTw5IKitLVZq9Sz1LWizN37HILp4u0350B8scBjg==}
     engines: {node: '>=18.0.0'}
 
   '@oxc-resolver/binding-darwin-arm64@11.1.0':
@@ -3253,6 +3253,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spawndamnit@3.0.1:
     resolution: {integrity: sha512-MmnduQUuHCoFckZoWnXsTg7JaiLBJrKFj9UI2MbRPGaJeVpsLcVBu6P/IGZovziM/YBsellCmsprgNA+w0CzVg==}
@@ -4283,7 +4284,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.18.0
 
-  '@oclif/core@4.5.0':
+  '@oclif/core@4.5.3':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
