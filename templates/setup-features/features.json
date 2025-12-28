@@ -152,6 +152,17 @@
         { "type": "command", "command": "bun outdated", "expectSuccess": true }
       ],
       "passes": false
+    },
+    {
+      "id": "claude-code-init",
+      "name": "Claude Code初期化",
+      "description": "claude /init を実行してCLAUDE.mdを生成。このfeatureは常に最後に実行すること（新規feature追加時もpriorityを超えないこと）",
+      "category": "tooling",
+      "priority": 999,
+      "enabled": true,
+      "dependsOn": [],
+      "acceptanceCriteria": [{ "type": "file", "file": "CLAUDE.md", "exists": true }],
+      "passes": false
     }
   ]
 }
