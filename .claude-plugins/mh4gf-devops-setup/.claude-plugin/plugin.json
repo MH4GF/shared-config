@@ -1,0 +1,8 @@
+{
+  "name": "mh4gf-devops-setup",
+  "description": "Automated devops environment setup for new repositories",
+  "version": "0.1.0",
+  "author": {
+    "name": "MH4GF"
+  }
+}
