@@ -22,13 +22,16 @@
       "priority": 1,
       "enabled": true,
       "dependsOn": [],
-      "acceptanceCriteria": [{ "type": "file", "file": ".node-version", "exists": true }],
+      "acceptanceCriteria": [
+        { "type": "file", "file": ".node-version", "exists": true },
+        { "type": "command", "command": "node --version", "expectSuccess": true }
+      ],
       "passes": false
     },
     {
       "id": "typescript",
       "name": "TypeScript設定",
-      "description": "最もstrictな設定でTypeScriptを書く。@mh4gf/configs/tsconfig/base.jsonを拡張。bun run allでtypecheckが動くようにする",
+      "description": "最もstrictな設定でTypeScriptを書く。bun add -D @mh4gf/configsでインストールし、@mh4gf/configs/tsconfig/base.jsonを拡張。bun run allでtypecheckが動くようにする",
       "category": "foundation",
       "priority": 2,
       "enabled": true,
@@ -42,7 +45,7 @@
     {
       "id": "biome",
       "name": "Biome設定",
-      "description": "Biomeをフォーマッター・リンターとして設定。Prettierは使わない。@mh4gf/configs/biomeを拡張。Reactプロジェクトの場合はreact.jsoncも追加。bun run allでformat:checkが動くようにする",
+      "description": "Biomeをフォーマッター・リンターとして設定。Prettierは使わない。@mh4gf/configs/biomeを拡張（@mh4gf/configsは既にインストール済み）。Reactプロジェクトの場合はreact.jsoncも追加。bun run allでformat:checkが動くようにする",
       "category": "code-quality",
       "priority": 3,
       "enabled": true,
@@ -57,7 +60,7 @@
     {
       "id": "eslint",
       "name": "ESLint設定",
-      "description": "ESLint設定。@mh4gf/eslint-configを拡張。プロジェクトに応じてrecommended/typescript/vitestを選択。bun run allでlint:checkが動くようにする",
+      "description": "ESLint設定。bun add -D @mh4gf/eslint-configでインストールし拡張。プロジェクトに応じてrecommended/typescript/vitestを選択。bun run allでlint:checkが動くようにする",
       "category": "code-quality",
       "priority": 3,
       "enabled": true,
@@ -72,7 +75,7 @@
     {
       "id": "knip",
       "name": "Knip設定",
-      "description": "未使用コード検出ツールの設定。bun run allでknip:checkが動くようにする",
+      "description": "未使用コード検出ツールの設定。bun create @knip/configでセットアップを開始。bun run allでknip:checkが動くようにする",
       "category": "code-quality",
       "priority": 4,
       "enabled": true,
