@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+  "features": [
+    {
+      "id": "package-manager",
+      "name": "bun設定",
+      "description": "bunをパッケージマネージャーとして設定",
+      "category": "foundation",
+      "priority": 1,
+      "enabled": true,
+      "dependsOn": [],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun install", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "node-version",
+      "name": "Node.jsバージョン設定",
+      "description": ".node-versionを配置して最新のNode.js LTSバージョンを設定",
+      "category": "foundation",
+      "priority": 1,
+      "enabled": true,
+      "dependsOn": [],
+      "acceptanceCriteria": [{ "type": "file", "file": ".node-version", "exists": true }],
+      "passes": false
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript設定",
+      "description": "最もstrictな設定でTypeScriptを書く。@mh4gf/configs/tsconfig/base.jsonを拡張。bun run allでtypecheckが動くようにする",
+      "category": "foundation",
+      "priority": 2,
+      "enabled": true,
+      "dependsOn": ["package-manager"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun run typecheck", "expectSuccess": true },
+        { "type": "command", "command": "bun run all", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "biome",
+      "name": "Biome設定",
+      "description": "Biomeをフォーマッター・リンターとして設定。Prettierは使わない。@mh4gf/configs/biomeを拡張。Reactプロジェクトの場合はreact.jsoncも追加。bun run allでformat:checkが動くようにする",
+      "category": "code-quality",
+      "priority": 3,
+      "enabled": true,
+      "dependsOn": ["package-manager"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun run format:check", "expectSuccess": true },
+        { "type": "command", "command": "bun run format:fix", "expectSuccess": true },
+        { "type": "command", "command": "bun run all", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "eslint",
+      "name": "ESLint設定",
+      "description": "ESLint設定。@mh4gf/eslint-configを拡張。プロジェクトに応じてrecommended/typescript/vitestを選択。bun run allでlint:checkが動くようにする",
+      "category": "code-quality",
+      "priority": 3,
+      "enabled": true,
+      "dependsOn": ["typescript"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun run lint:check", "expectSuccess": true },
+        { "type": "command", "command": "bun run lint:fix", "expectSuccess": true },
+        { "type": "command", "command": "bun run all", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "knip",
+      "name": "Knip設定",
+      "description": "未使用コード検出ツールの設定。bun run allでknip:checkが動くようにする",
+      "category": "code-quality",
+      "priority": 4,
+      "enabled": true,
+      "dependsOn": ["typescript"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun run knip:check", "expectSuccess": true },
+        { "type": "command", "command": "bun run knip:fix", "expectSuccess": true },
+        { "type": "command", "command": "bun run all", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "vitest",
+      "name": "Vitest設定",
+      "description": "テストフレームワークの設定。カバレッジ設定含む。bun run allでtestが動くようにする",
+      "category": "testing",
+      "priority": 4,
+      "enabled": false,
+      "dependsOn": ["typescript"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun run test", "expectSuccess": true },
+        { "type": "command", "command": "bun run test:coverage", "expectSuccess": true },
+        { "type": "command", "command": "bun run all", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "lefthook",
+      "name": "Lefthook設定",
+      "description": "Gitフックによるpre-commit。bun run allが動くようにする",
+      "category": "git-hooks",
+      "priority": 5,
+      "enabled": true,
+      "dependsOn": ["biome", "eslint", "typescript"],
+      "acceptanceCriteria": [
+        { "type": "file", "file": "lefthook.yml", "exists": true },
+        { "type": "command", "command": "lefthook install", "expectSuccess": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "github-actions-ci",
+      "name": "GitHub Actions CI",
+      "description": "CIワークフロー。bun run allが成功することを検証する",
+      "category": "ci-cd",
+      "priority": 6,
+      "enabled": true,
+      "dependsOn": ["biome", "eslint", "typescript", "knip"],
+      "acceptanceCriteria": [
+        { "type": "file", "file": ".github/workflows/ci.yml", "exists": true }
+      ],
+      "passes": false
+    },
+    {
+      "id": "renovate",
+      "name": "Renovate設定",
+      "description": "依存関係自動更新の設定。config:best-practicesを拡張",
+      "category": "ci-cd",
+      "priority": 6,
+      "enabled": true,
+      "dependsOn": ["package-manager"],
+      "acceptanceCriteria": [{ "type": "file", "file": "renovate.json5", "exists": true }],
+      "passes": false
+    },
+    {
+      "id": "deps-latest",
+      "name": "依存パッケージ最新化",
+      "description": "初期設定時点で全依存パッケージが最新であることを確認",
+      "category": "foundation",
+      "priority": 7,
+      "enabled": true,
+      "dependsOn": ["package-manager"],
+      "acceptanceCriteria": [
+        { "type": "command", "command": "bun outdated", "expectSuccess": true }
+      ],
+      "passes": false
+    }
+  ]
+}
