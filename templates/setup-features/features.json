@@ -141,6 +141,38 @@
       "passes": false
     },
     {
+      "id": "github-repo-settings",
+      "name": "GitHubリポジトリ設定",
+      "description": "gh repo editでPRマージ時のブランチ自動削除、merge-commitのみ有効化、更新ボタン表示を設定。allowUpdateBranchはAPI取得不可のためACから除外",
+      "category": "ci-cd",
+      "priority": 6,
+      "enabled": true,
+      "dependsOn": [],
+      "acceptanceCriteria": [
+        {
+          "type": "command",
+          "command": "test \"$(gh repo view --json deleteBranchOnMerge --jq '.deleteBranchOnMerge')\" = \"true\"",
+          "expectSuccess": true
+        },
+        {
+          "type": "command",
+          "command": "test \"$(gh repo view --json mergeCommitAllowed --jq '.mergeCommitAllowed')\" = \"true\"",
+          "expectSuccess": true
+        },
+        {
+          "type": "command",
+          "command": "test \"$(gh repo view --json squashMergeAllowed --jq '.squashMergeAllowed')\" = \"false\"",
+          "expectSuccess": true
+        },
+        {
+          "type": "command",
+          "command": "test \"$(gh repo view --json rebaseMergeAllowed --jq '.rebaseMergeAllowed')\" = \"false\"",
+          "expectSuccess": true
+        }
+      ],
+      "passes": false
+    },
+    {
       "id": "deps-latest",
       "name": "依存パッケージ最新化",
       "description": "初期設定時点で全依存パッケージが最新であることを確認",
@@ -151,6 +183,17 @@
       "acceptanceCriteria": [
         { "type": "command", "command": "bun outdated", "expectSuccess": true }
       ],
+      "passes": false
+    },
+    {
+      "id": "claude-code-init",
+      "name": "Claude Code初期化",
+      "description": "claude /init を実行してCLAUDE.mdを生成。このfeatureは常に最後に実行すること（新規feature追加時もpriorityを超えないこと）",
+      "category": "tooling",
+      "priority": 999,
+      "enabled": true,
+      "dependsOn": [],
+      "acceptanceCriteria": [{ "type": "file", "file": "CLAUDE.md", "exists": true }],
       "passes": false
     }
   ]
