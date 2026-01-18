@@ -1,7 +1,7 @@
 {
   "name": "plan-tools",
   "description": "Tools for clarifying and visualizing requirements in plan files",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": {
     "name": "MH4GF"
   }

@@ -37,11 +37,14 @@ If path is omitted, automatically searches for `PLAN.md`, `SPEC.md`, etc.
 
 ### `/plan-tools:pbcopy`
 
-Copy plan file path to clipboard for use in other sessions or GitHub.
+Copy plan file content or path to clipboard for use in other sessions or GitHub.
 
 ```
-/plan-tools:pbcopy <path to plan file>
+/plan-tools:pbcopy [file path] [--path]
 ```
+
+- Default: copies file content
+- `--path`: copies file path instead
 
 If path is omitted, uses the plan file from conversation context or searches `~/.claude/plans/`.
 
