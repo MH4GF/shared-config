@@ -1,63 +1,63 @@
 ---
-description: 計画ファイルにステートマシン図を追加し、要件を明確化
-argument-hint: [計画ファイルのパス（省略時は自動検索）]
+description: Add a state machine diagram to a plan file to clarify requirements
+argument-hint: [path to plan file (auto-search if omitted)]
 allowed-tools: Read, Write, Edit, Glob, Grep, AskUserQuestion
 context: fork
 ---
 
-計画ファイルを読み、ステートマシン図（ASCII形式）を生成して要件を明確化する。
+Read a plan file, generate a state machine diagram (ASCII format), and clarify requirements.
 
 <goals>
-- 状態遷移図でレビューしやすくし、認識齟齬を減らす
-- 状態遷移として整理し、処理の抜け漏れを発見して埋める
-- 曖昧な点はAskUserQuestionで質問し、確定した内容のみを計画ファイルに反映する
+- Make reviews easier with state transition diagrams, reducing misunderstandings
+- Organize as state transitions to discover and fill gaps in processing
+- Ask questions via AskUserQuestion for ambiguous points, only reflecting confirmed content in the plan file
 </goals>
 
-## Phase 1: 計画ファイルの特定
+## Phase 1: Identify the Plan File
 
-`$ARGUMENTS`が指定されている場合はそのファイルを使用。
+If `$ARGUMENTS` is specified, use that file.
 
-未指定の場合は以下を順に検索：
+If not specified, search in the following order:
 1. `**/PLAN.md`, `**/plan.md`
 2. `**/SPEC.md`, `**/spec.md`
-3. `**/docs/*.md`のうち計画・仕様に関するもの
+3. Files in `**/docs/*.md` related to plans or specifications
 
-見つからない場合 → ユーザーに確認
+If not found → confirm with user
 
-## Phase 2: 状態と遷移の抽出
+## Phase 2: Extract States and Transitions
 
-計画ファイルから以下を特定：
+Identify the following from the plan file:
 
-| 要素 | 説明 |
-|------|------|
-| 状態 | システムが取りうる各状態 |
-| 遷移 | 状態間の移動とトリガー |
-| 初期状態 | 処理の開始点 |
-| 終了状態 | 処理の完了点（複数可） |
+| Element | Description |
+|---------|-------------|
+| States | Each state the system can be in |
+| Transitions | Movements between states and their triggers |
+| Initial state | Starting point of the process |
+| End states | Completion points of the process (can be multiple) |
 
-## Phase 3: 網羅性チェックと曖昧さの解消
+## Phase 3: Completeness Check and Ambiguity Resolution
 
-以下の観点で抜け漏れを検出：
+Detect gaps from the following perspectives:
 
-- 各状態から出る遷移が定義されているか
-- エラー時、キャンセル時、タイムアウト時の遷移
-- すべてのフローが終了状態に到達できるか
-- どこからも遷移できない孤立状態がないか
+- Are transitions defined for each state?
+- Transitions for error, cancellation, and timeout cases
+- Can all flows reach an end state?
+- Are there isolated states that cannot be reached from anywhere?
 
-抜け漏れや曖昧な点を発見した場合、AskUserQuestionツールで質問する。
+When gaps or ambiguities are found, ask questions using the AskUserQuestion tool.
 
 <constraints>
-- 2〜4個の質問（曖昧さのレベルに応じて調整）
-- 各質問に2〜4個の具体的な選択肢
-- 各選択肢にメリット・デメリットを含める
-- オープンエンドな質問は避ける（「その他」は自動付与）
+- 2-4 questions (adjust based on level of ambiguity)
+- 2-4 specific options per question
+- Include pros and cons for each option
+- Avoid open-ended questions ("Other" is automatically added)
 </constraints>
 
-回答を反映してPhase 2-3を繰り返す。すべての状態遷移が確定するまで続ける。
+Incorporate answers and repeat Phase 2-3. Continue until all state transitions are confirmed.
 
-## Phase 4: ASCII図の生成と計画ファイルの更新
+## Phase 4: Generate ASCII Diagram and Update Plan File
 
-確定した状態遷移からASCII図を生成し、計画ファイルに追加する。
+Generate an ASCII diagram from confirmed state transitions and add it to the plan file.
 
 ````markdown
 ## State Machine
@@ -75,8 +75,8 @@ context: fork
 ```
 ````
 
-最後に変更内容のサマリーを提示。
+Present a summary of changes at the end.
 
 ---
 
-対象: $ARGUMENTS
+Target: $ARGUMENTS
