@@ -1,34 +1,32 @@
 ---
-description: Copy plan file path to clipboard
-argument-hint: [path to plan file (skip if already known from context)]
-allowed-tools: Bash, Glob
+description: Copy plan file content or path to clipboard
+argument-hint: [file path] [--path]
+allowed-tools: Bash, Glob, Read
 context: fork
 ---
 
-Copy plan file path to clipboard for use in other sessions or GitHub.
+Copy plan file content (default) or path to clipboard.
 
-<goals>
-1. Identify target plan file
-2. Copy path to clipboard
-</goals>
+## Arguments
 
-## Phase 1: Identify file
+- `--path`: copy file path instead of content
 
-If file path is known from conversation context:
-- Use that path directly (skip search)
+## Identify file
 
-If argument provided:
-- Use $ARGUMENTS
+1. If file path known from context → use it
+2. If file path in $ARGUMENTS → use it
+3. Otherwise → find most recent `.md` in `~/.claude/plans/`
 
-Otherwise:
-- Search `~/.claude/plans/` for most recent `.md` file
+## Copy
 
-## Phase 2: Copy to clipboard
+Default (content):
+```bash
+cat "<file_path>" | pbcopy
+```
 
+With `--path`:
 ```bash
 echo -n "<file_path>" | pbcopy
 ```
 
-Report copied path to user.
-
-Target: $ARGUMENTS
+Report what was copied.
