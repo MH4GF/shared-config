@@ -21,6 +21,16 @@ Add a state machine diagram (ASCII format) to a plan file to clarify requirement
 
 If path is omitted, automatically searches for `PLAN.md`, `SPEC.md`, etc.
 
+### `/plan-tools:pbcopy`
+
+Copy plan file path to clipboard for use in other sessions or GitHub.
+
+```
+/plan-tools:pbcopy <path to plan file>
+```
+
+If path is omitted, uses the plan file from conversation context or searches `~/.claude/plans/`.
+
 #### Example Output
 
 ```
