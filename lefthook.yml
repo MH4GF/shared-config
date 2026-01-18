@@ -10,6 +10,7 @@ pre-commit:
         the version in the corresponding plugin.json file.
 
     lint:
+      glob: "**/*.{ts,tsx,js,jsx,mjs,cjs,json}"
       run: pnpm lint
       fail_text: "Linting failed. Please fix the issues and try again."
       stage_fixed: true
