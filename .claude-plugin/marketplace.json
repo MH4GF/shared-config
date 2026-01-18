@@ -23,9 +23,9 @@
       }
     },
     {
-      "name": "state-machine",
-      "source": "./.claude-plugins/state-machine",
-      "description": "Clarify requirements by visualizing state machines with ASCII diagrams",
+      "name": "plan-tools",
+      "source": "./.claude-plugins/plan-tools",
+      "description": "Tools for clarifying and visualizing requirements in plan files",
       "version": "0.1.0",
       "author": {
         "name": "MH4GF"
