@@ -30,6 +30,15 @@
       "author": {
         "name": "MH4GF"
       }
+    },
+    {
+      "name": "qa",
+      "source": "./.claude-plugins/qa",
+      "description": "QA-focused agents for test planning and verification",
+      "version": "0.1.0",
+      "author": {
+        "name": "MH4GF"
+      }
     }
   ]
 }
