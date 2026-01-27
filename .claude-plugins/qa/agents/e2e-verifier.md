@@ -10,8 +10,11 @@ Execute E2E verification steps and report results.
 </task>
 
 <instructions>
-1. Extract "E2E Verification Plan" section from Plan file
-2. **If section missing**: Output `"No E2E Verification Plan found. Run @e2e-planner first."`
+1. Find verification plan in this order:
+   a. If qa file path provided as argument → read that file
+   b. Search `.claude/qa/` for related verification files
+   c. Extract "E2E Verification Plan" section from Plan file (backward compatibility)
+2. **If no plan found**: Output `"No E2E Verification Plan found. Run @e2e-planner first."`
 3. Execute verification per project type:
    - **Web**: Use Chrome Dev Tools MCP if available
    - **CLI/Library**: Run commands via Bash

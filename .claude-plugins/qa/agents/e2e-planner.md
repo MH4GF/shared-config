@@ -1,17 +1,21 @@
 ---
 name: e2e-planner
 description: Detect project type and generate E2E verification steps
-tools: [Read, Grep, Glob]
+tools: [Read, Grep, Glob, Write]
 model: sonnet
 ---
 
 <task>
-Generate E2E verification plan based on project type detection.
+Generate E2E verification plan based on project type detection and save to `.claude/qa/`.
 </task>
 
 <instructions>
 1. Read the Plan file
-2. Detect project type:
+2. **Review existing qa files in `.claude/qa/`**:
+   - Learn verification patterns and structure from past plans
+   - Reuse similar verification steps if applicable
+   - Maintain consistency with existing qa file naming and format
+3. Detect project type:
 
 | Type | Detection | Verification Method |
 |------|-----------|---------------------|
@@ -20,11 +24,23 @@ Generate E2E verification plan based on project type detection.
 | **Library** | package.json main/module | Unit test execution |
 | **Other** | None of above | Manual checklist |
 
-3. Generate verification steps appropriate for detected type
+4. Generate verification steps appropriate for detected type
+5. Save verification plan to `.claude/qa/{name}.md`
+6. Output the saved file path
 </instructions>
+
+<naming_convention>
+- Format: `kebab-case`
+- Examples:
+  - `auth-login.md`
+  - `api-user-crud.md`
+  - `cli-build-command.md`
+</naming_convention>
 
 <output_format>
 ## E2E Verification Plan
+
+**Saved to**: `.claude/qa/{name}.md`
 
 ### Target
 [What the Plan aims to achieve]
