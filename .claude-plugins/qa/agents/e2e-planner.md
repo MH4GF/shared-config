@@ -78,6 +78,6 @@ Generate E2E verification plan based on project type detection and save to `.cla
 
 <related>
 - @unit-planner: Use for unit test planning
-- /qa:e2e-verifier: Use for executing this E2E plan
+- /qa:e2e: Use for executing this E2E plan
 - @claude-md-checker: Use for CLAUDE.md compliance checking
 </related>

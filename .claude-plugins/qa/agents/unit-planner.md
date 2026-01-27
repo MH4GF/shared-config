@@ -52,6 +52,6 @@ Generate a unit test plan based on Plan file requirements and existing project p
 
 <related>
 - @e2e-planner: Use for E2E verification planning
-- /qa:e2e-verifier: Use for executing E2E verification
+- /qa:e2e: Use for executing E2E verification
 - @claude-md-checker: Use for CLAUDE.md compliance checking
 </related>

@@ -4,12 +4,12 @@ QA-focused agents and commands for test planning and verification.
 
 ## Commands
 
-### e2e-verifier
+### e2e
 
 Execute E2E verification and confirm Plan requirements are met.
 
 ```
-/qa:e2e-verifier [path/to/qa-file.md]
+/qa:e2e [path/to/qa-file.md]
 ```
 
 ## Agents
@@ -53,7 +53,7 @@ Implementation
 @claude-md-checker ──► [Fail] → Fix → Loop
     │
     ▼ [Pass]
-/qa:e2e-verifier ──► [Fail] → Fix → Loop
+/qa:e2e ──► [Fail] → Fix → Loop
     │
     ▼ [Pass]
 Complete

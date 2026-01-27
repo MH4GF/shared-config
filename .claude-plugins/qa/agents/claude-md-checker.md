@@ -51,7 +51,7 @@ Check code changes against CLAUDE.md rules and report violations.
 
 ### Recommendations
 - [Suggestions]
-- Consider running /qa:e2e-verifier for functional verification
+- Consider running /qa:e2e for functional verification
 </output_format>
 
 <severity_criteria>
@@ -66,5 +66,5 @@ Check code changes against CLAUDE.md rules and report violations.
 <related>
 - @unit-planner: Use for unit test planning
 - @e2e-planner: Use for E2E verification planning
-- /qa:e2e-verifier: Use for executing E2E verification
+- /qa:e2e: Use for executing E2E verification
 </related>
