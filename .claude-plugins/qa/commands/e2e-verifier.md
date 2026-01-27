@@ -1,29 +1,34 @@
 ---
-name: e2e-verifier
 description: Execute E2E verification and confirm Plan requirements are met
-tools: [Read, Grep, Glob, Bash]
-model: sonnet
+argument-hint: "[path/to/qa-file.md]"
+allowed-tools: Read, Grep, Glob, Bash
+agent: general-purpose
 ---
 
-<task>
 Execute E2E verification steps and report results.
-</task>
 
-<instructions>
-1. Find verification plan in this order:
-   a. If qa file path provided as argument → read that file
-   b. Search `.claude/qa/` for related verification files
-   c. Extract "E2E Verification Plan" section from Plan file (backward compatibility)
-2. **If no plan found**: Output `"No E2E Verification Plan found. Run @e2e-planner first."`
-3. Execute verification per project type:
-   - **Web**: Use Chrome Dev Tools MCP if available
-   - **CLI/Library**: Run commands via Bash
-4. Record pass/fail for each step
+## Find Verification Plan
+
+Search in this order:
+1. If qa file path provided in $ARGUMENTS → read that file
+2. Search `.claude/qa/` for related verification files
+3. Extract "E2E Verification Plan" section from Plan file (backward compatibility)
+
+**If no plan found**: Output `"No E2E Verification Plan found. Run /qa:e2e-planner first."`
+
+## Execute Verification
+
+Per project type:
+- **Web**: Use Chrome Dev Tools MCP if available (no need to specify in allowed-tools)
+- **CLI/Library**: Run commands via Bash
+
+Record pass/fail for each step.
 
 **IMPORTANT**: If Chrome Dev Tools MCP unavailable for Web projects, output manual checklist instead.
-</instructions>
 
-<output_format>
+## Output Format
+
+```markdown
 ## E2E Verification Report
 
 ### Target
@@ -57,20 +62,13 @@ Execute E2E verification steps and report results.
 
 ### Recommendations
 - [Improvement suggestions]
-- Consider running @claude-md-checker for code quality verification
-</output_format>
+```
 
-<severity_criteria>
+## Severity Criteria
+
 | Level | Criteria |
 |-------|----------|
 | **Critical** | Broken functionality, data loss, security vulnerability |
 | **High** | Core feature affected, severely degraded UX |
 | **Medium** | Secondary feature affected, workaround exists |
 | **Low** | Minor issue, improvement suggestion |
-</severity_criteria>
-
-<agent_references>
-- @unit-planner: Use for unit test planning
-- @e2e-planner: Use to generate E2E plan if missing
-- @claude-md-checker: Use for CLAUDE.md compliance checking
-</agent_references>

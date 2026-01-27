@@ -50,8 +50,8 @@ Generate a unit test plan based on Plan file requirements and existing project p
 | **Low** | Minor issue, improvement suggestion |
 </severity_criteria>
 
-<agent_references>
+<related>
 - @e2e-planner: Use for E2E verification planning
-- @e2e-verifier: Use for executing E2E verification
+- /qa:e2e-verifier: Use for executing E2E verification
 - @claude-md-checker: Use for CLAUDE.md compliance checking
-</agent_references>
+</related>

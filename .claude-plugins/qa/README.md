@@ -1,6 +1,16 @@
 # QA Plugin
 
-QA-focused agents for test planning and verification.
+QA-focused agents and commands for test planning and verification.
+
+## Commands
+
+### e2e-verifier
+
+Execute E2E verification and confirm Plan requirements are met.
+
+```
+/qa:e2e-verifier [path/to/qa-file.md]
+```
 
 ## Agents
 
@@ -14,18 +24,10 @@ Task tool → subagent_type: "qa:unit-planner"
 
 ### e2e-planner
 
-Detect project type and generate E2E verification steps.
+Detect project type and generate E2E verification steps. Saves to `.claude/qa/`.
 
 ```
 Task tool → subagent_type: "qa:e2e-planner"
-```
-
-### e2e-verifier
-
-Execute E2E verification and confirm Plan requirements are met.
-
-```
-Task tool → subagent_type: "qa:e2e-verifier"
 ```
 
 ### claude-md-checker
@@ -51,7 +53,7 @@ Implementation
 @claude-md-checker ──► [Fail] → Fix → Loop
     │
     ▼ [Pass]
-@e2e-verifier ──► [Fail] → Fix → Loop
+/qa:e2e-verifier ──► [Fail] → Fix → Loop
     │
     ▼ [Pass]
 Complete
