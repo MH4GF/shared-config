@@ -6,7 +6,7 @@
     "./node_modules/@mh4gf/configs/biome/nodejs.jsonc"
   ],
   "files": {
-    "includes": ["**", "!examples/**/*"]
+    "includes": ["!examples/**/*"]
   },
   "linter": {
     "rules": {

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Init } from '../src/commands/init.js'
+import { Init } from '../src/commands/init.ts'
 
 describe('Init command', () => {
   it('should show interactive mode with placeholder implementation', async () => {

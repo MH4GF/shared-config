@@ -35,6 +35,9 @@
     },
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnresolvedImports": "off"
+      },
       "nursery": {
         "useExplicitType": "error"
       },
