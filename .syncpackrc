@@ -44,6 +44,12 @@
     {
       "dependencies": ["$LOCAL"],
       "isIgnored": true
+    },
+    {
+      "label": "ink@5 requires React 18",
+      "dependencies": ["react", "@types/react"],
+      "packages": ["@mh4gf/configs"],
+      "isIgnored": true
     }
   ]
 }
