@@ -4,7 +4,6 @@ description: 'Setup dependencies with pnpm'
 inputs:
   working-directory:
     required: false
-    type: string
     default: '.'
 
 runs:
