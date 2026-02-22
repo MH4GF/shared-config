@@ -27,7 +27,7 @@
   "devDependencies": {
     "tsup": "8.5.1",
     "tsx": "4.21.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.3"
   },
   "peerDependencies": {
     "@tsconfig/strictest": "^2"
@@ -37,7 +37,7 @@
     "dev": "tsx src/cli.ts",
     "postpack": "rm -rf bin"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.30.0",
   "files": [
     "bin",
     "biome",
