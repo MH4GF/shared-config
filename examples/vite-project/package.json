@@ -8,7 +8,7 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.1",
+    "@biomejs/biome": "2.4.2",
     "@mh4gf/configs": "workspace:*",
     "@mh4gf/eslint-config": "workspace:*",
     "@types/react": "19.0.8",
