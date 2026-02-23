@@ -1,6 +1,6 @@
 import { render } from 'ink-testing-library'
 import { describe, expect, it } from 'vitest'
-import { InitForm } from '../src/ui/InitForm.js'
+import { InitForm } from '../src/ui/InitForm.tsx'
 
 describe('InitForm component', () => {
   it('should render with no options selected initially', () => {

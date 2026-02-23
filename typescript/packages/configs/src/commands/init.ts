@@ -74,7 +74,7 @@ export class Init extends Command {
 
     // Import and render the Ink UI
     const { render } = await import('ink')
-    const { InitForm } = await import('../ui/InitForm.js')
+    const { InitForm } = await import('../ui/InitForm.tsx')
     const React = await import('react')
 
     render(React.createElement(InitForm))

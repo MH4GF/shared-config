@@ -1,6 +1,14 @@
 import { describe, expect, it, vi } from 'vitest'
 import { Init } from '../src/commands/init.ts'
 
+vi.mock('ink', () => ({
+  render: vi.fn(),
+}))
+
+vi.mock('../src/ui/InitForm.tsx', () => ({
+  InitForm: () => null,
+}))
+
 describe('Init command', () => {
   it('should show interactive mode with Ink UI', async () => {
     const initCommand = new Init([], {
