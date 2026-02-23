@@ -33,7 +33,7 @@ describe('CLI Integration', () => {
         reject(new Error(`CLI command timed out after ${timeout}ms`))
       }, timeout)
 
-      const tsxPath = join(__dirname, '../../../../node_modules/.bin/tsx')
+      const tsxPath = join(__dirname, '../node_modules/.bin/tsx')
       const child = spawn(tsxPath, [cliPath, ...args], {
         stdio: ['pipe', 'pipe', 'pipe'],
         env: { ...process.env, NODE_ENV: 'test' },
