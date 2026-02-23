@@ -74,7 +74,8 @@ export class Init extends Command {
 
     // Import and render the Ink UI
     const { render } = await import('ink')
-    const { InitForm } = await import('../ui/InitForm.tsx')
+    // biome-ignore lint/correctness/useImportExtensions: .tsx breaks DTS build (TS5097)
+    const { InitForm } = await import('../ui/InitForm.js')
     const React = await import('react')
 
     render(React.createElement(InitForm))

@@ -5,7 +5,7 @@ vi.mock('ink', () => ({
   render: vi.fn(),
 }))
 
-vi.mock('../src/ui/InitForm.tsx', () => ({
+vi.mock('../src/ui/InitForm.js', () => ({
   InitForm: () => null,
 }))
 
