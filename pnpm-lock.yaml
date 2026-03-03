@@ -104,7 +104,7 @@ importers:
         version: 2.0.5
       ink:
         specifier: 6.8.0
-        version: 6.8.0(@types/react@18.3.17)(react@18.3.1)
+        version: 6.8.0(@types/react@18.3.28)(react@18.3.1)
       neverthrow:
         specifier: 8.2.0
         version: 8.2.0
@@ -113,11 +113,11 @@ importers:
         version: 18.3.1
     devDependencies:
       '@types/react':
-        specifier: 18.3.17
-        version: 18.3.17
+        specifier: 18.3.28
+        version: 18.3.28
       ink-testing-library:
         specifier: 4.0.0
-        version: 4.0.0(@types/react@18.3.17)
+        version: 4.0.0(@types/react@18.3.28)
       tsup:
         specifier: 8.5.1
         version: 8.5.1(@swc/core@1.10.18)(jiti@2.4.2)(postcss@8.5.3)(tsx@4.21.0)(typescript@5.8.3)(yaml@2.8.0)
@@ -1060,8 +1060,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@18.3.17':
-    resolution: {integrity: sha512-opAQ5no6LqJNo9TqnxBKsgnkIYHozW9KSTlFVoSUJYh1Fl/sswkEoqIugRSm7tbh6pABtYjGAjW+GOS23j8qbw==}
+  '@types/react@18.3.28':
+    resolution: {integrity: sha512-z9VXpC7MWrhfWipitjNdgCauoMLRdIILQsAEV+ZesIzBq/oUlxk0m3ApZuMFCXdnS4U7KrI+l3WRUEGQ8K1QKw==}
 
   '@types/react@19.0.8':
     resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
@@ -1642,6 +1642,9 @@ packages:
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
+  csstype@3.2.3:
+    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
   data-view-buffer@1.0.2:
     resolution: {integrity: sha512-EmKO5V3OLXh1rtK2wgXRansaK1/mtVdTUEiEI0W8RkvgT05kfxaH29PliLnpLP73yYO6142Q72QNa8Wx/A5CqQ==}
@@ -4640,10 +4643,10 @@ snapshots:
     dependencies:
       '@types/react': 19.0.8
 
-  '@types/react@18.3.17':
+  '@types/react@18.3.28':
     dependencies:
       '@types/prop-types': 15.7.15
-      csstype: 3.1.3
+      csstype: 3.2.3
 
   '@types/react@19.0.8':
     dependencies:
@@ -5255,6 +5258,8 @@ snapshots:
       which: 2.0.2
 
   csstype@3.1.3: {}
+
+  csstype@3.2.3: {}
 
   data-view-buffer@1.0.2:
     dependencies:
@@ -6000,11 +6005,11 @@ snapshots:
 
   ini@4.1.1: {}
 
-  ink-testing-library@4.0.0(@types/react@18.3.17):
+  ink-testing-library@4.0.0(@types/react@18.3.28):
     optionalDependencies:
-      '@types/react': 18.3.17
+      '@types/react': 18.3.28
 
-  ink@6.8.0(@types/react@18.3.17)(react@18.3.1):
+  ink@6.8.0(@types/react@18.3.28)(react@18.3.1):
     dependencies:
       '@alcalzone/ansi-tokenize': 0.2.5
       ansi-escapes: 7.3.0
@@ -6033,7 +6038,7 @@ snapshots:
       ws: 8.19.0
       yoga-layout: 3.2.1
     optionalDependencies:
-      '@types/react': 18.3.17
+      '@types/react': 18.3.28
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
