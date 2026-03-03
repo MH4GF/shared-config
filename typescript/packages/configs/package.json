@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@oclif/core": "4.8.2",
-    "ink": "5.1.0",
+    "ink": "6.8.0",
     "neverthrow": "8.2.0",
     "react": "18.3.1"
   },
