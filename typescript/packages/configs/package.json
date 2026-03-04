@@ -24,10 +24,10 @@
     "@oclif/core": "4.8.2",
     "ink": "6.8.0",
     "neverthrow": "8.2.0",
-    "react": "18.3.1"
+    "react": "19.2.4"
   },
   "devDependencies": {
-    "@types/react": "18.3.28",
+    "@types/react": "19.2.14",
     "ink-testing-library": "4.0.0",
     "tsup": "8.5.1",
     "tsx": "4.21.0",

@@ -1,5 +1,5 @@
 import { Box, Text, useInput } from 'ink'
-import { useState } from 'react'
+import { type JSX, useState } from 'react'
 
 interface ConfigOption {
   name: string
