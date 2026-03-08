@@ -15,7 +15,7 @@
     "knip": "5.85.0",
     "lefthook": "2.1.2",
     "scaffdog": "4.1.0",
-    "syncpack": "14.0.0",
+    "syncpack": "14.0.1",
     "typescript": "5.9.3",
     "vitest": "4.0.18"
   },
