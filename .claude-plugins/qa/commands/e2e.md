@@ -1,7 +1,7 @@
 ---
 description: Execute E2E verification and confirm Plan requirements are met
 argument-hint: "[path/to/qa-file.md]"
-allowed-tools: Read, Grep, Glob, Bash
+allowed-tools: Read, Grep, Glob, Bash, Write
 agent: general-purpose
 ---
 
@@ -16,10 +16,22 @@ Search in this order:
 
 **If no plan found**: Output `"No E2E Verification Plan found. Run /qa:e2e-planner first."`
 
+Record the **source name** for report saving:
+- qa file → filename without extension (e.g. `qa-file-persistence`)
+- Plan file → filename without extension (e.g. `fuzzy-inventing-llama`)
+
+## Review Past Reports
+
+Search `.claude/qa/reports/` for files matching the source name prefix. If found, read the most recent report and note:
+- Previously failed steps and their causes
+- Issues Found and Recommendations sections
+
+Pay extra attention to these areas during verification.
+
 ## Execute Verification
 
 Per project type:
-- **Web**: Use Chrome Dev Tools MCP if available (no need to specify in allowed-tools)
+- **Web**: Use Chrome Dev Tools MCP if available
 - **CLI/Library**: Run commands via Bash
 
 Record pass/fail for each step.
@@ -63,6 +75,12 @@ Record pass/fail for each step.
 ### Recommendations
 - [Improvement suggestions]
 ```
+
+## Save Report
+
+Save the report to `.claude/qa/reports/{source-name}-{YYYY-MM-DD}.md`.
+
+If a file with that name exists, append a sequential number (`-2`, `-3`, etc.).
 
 ## Severity Criteria
 
