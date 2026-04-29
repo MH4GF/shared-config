@@ -21,7 +21,7 @@
     "shared-config": "./bin/cli.js"
   },
   "dependencies": {
-    "@oclif/core": "4.10.5",
+    "@oclif/core": "4.10.6",
     "ink": "6.8.0",
     "neverthrow": "8.2.0",
     "react": "19.2.5"
