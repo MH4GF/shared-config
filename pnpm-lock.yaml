@@ -97,8 +97,8 @@ importers:
   typescript/packages/configs:
     dependencies:
       '@oclif/core':
-        specifier: 4.10.5
-        version: 4.10.5
+        specifier: 4.11.0
+        version: 4.11.0
       '@tsconfig/strictest':
         specifier: ^2
         version: 2.0.8
@@ -728,8 +728,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@oclif/core@4.10.5':
-    resolution: {integrity: sha512-qcdCF7NrdWPfme6Kr34wwljRCXbCVpL1WVxiNy0Ep6vbWKjxAjFQwuhqkoyL0yjI+KdwtLcOCGn5z2yzdijc8w==}
+  '@oclif/core@4.11.0':
+    resolution: {integrity: sha512-nTkRMgxFlIKQIIYGvhO2JMsLSQ1aHPHblHfFgxgoBrGK8Ao/8wxc4eNOIv/+t8dMXliZd7mREVr6la4aXXXg5A==}
     engines: {node: '>=18.0.0'}
 
   '@oxc-parser/binding-android-arm-eabi@0.128.0':
@@ -4441,7 +4441,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@oclif/core@4.10.5':
+  '@oclif/core@4.11.0':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
