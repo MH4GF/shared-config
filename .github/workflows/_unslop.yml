@@ -14,6 +14,13 @@ on:
         description: textlint config path (relative to the caller repo root)
         type: string
         default: .textlintrc.json
+      ignore-paths:
+        description: |
+          Newline-separated glob patterns to exclude from unslop.
+          `*` matches a single path segment; `**` matches across `/`.
+          Example: `wiki/raw/**` excludes every file under `wiki/raw/`.
+        type: string
+        default: ""
 
 jobs:
   unslop:
@@ -45,6 +52,7 @@ jobs:
         id: changed
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          IGNORE_PATHS: ${{ inputs.ignore-paths }}
         run: |
           set -euo pipefail
           files=$(git diff --name-only --diff-filter=ACMR "$BASE_SHA"...HEAD -- '*.md' '*.mdx' || true)
@@ -52,6 +60,39 @@ jobs:
             echo "No changed Markdown files."
             echo "files=" >> "$GITHUB_OUTPUT"
             exit 0
+          fi
+          if [ -n "$IGNORE_PATHS" ]; then
+            files=$(printf '%s\n' "$files" | awk '
+              BEGIN {
+                patterns = ENVIRON["IGNORE_PATHS"]
+                n = split(patterns, pats, "\n")
+                m = 0
+                for (i = 1; i <= n; i++) {
+                  p = pats[i]
+                  if (p == "") continue
+                  gsub(/[.+(){}|^$]/, "\\\\&", p)
+                  gsub(/\*\*/, "@@D@@", p)
+                  gsub(/\*/, "[^/]*", p)
+                  gsub(/@@D@@/, ".*", p)
+                  gsub(/\?/, "[^/]", p)
+                  regexps[++m] = "^" p "$"
+                }
+              }
+              {
+                for (i = 1; i <= m; i++) {
+                  if ($0 ~ regexps[i]) {
+                    print "Ignored by ignore-paths: " $0 > "/dev/stderr"
+                    next
+                  }
+                }
+                print
+              }
+            ')
+            if [ -z "$files" ]; then
+              echo "All changed Markdown files matched ignore-paths."
+              echo "files=" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
           fi
           ja_files=""
           while IFS= read -r file; do
