@@ -31,22 +31,41 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Resolve unslop revision
+      - name: Resolve unslop release tag
         id: unslop-rev
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          sha=$(git ls-remote https://github.com/MH4GF/unslop HEAD | cut -f1)
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          tag=$(gh release view --repo MH4GF/unslop --json tagName --jq .tagName)
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - name: Cache unslop binary
         id: cache-unslop
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
-          path: ~/.cargo/bin/unslop
-          key: unslop-${{ runner.os }}-${{ steps.unslop-rev.outputs.sha }}
+          path: ~/.local/bin/unslop
+          key: unslop-${{ runner.os }}-${{ steps.unslop-rev.outputs.tag }}
 
       - name: Install unslop
         if: steps.cache-unslop.outputs.cache-hit != 'true'
-        run: cargo install --git https://github.com/MH4GF/unslop --rev ${{ steps.unslop-rev.outputs.sha }} --locked
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.unslop-rev.outputs.tag }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+          tmp=$(mktemp -d)
+          gh release download "$TAG" --repo MH4GF/unslop \
+            --pattern 'unslop-x86_64-unknown-linux-gnu.tar.gz' \
+            --pattern 'unslop-x86_64-unknown-linux-gnu.tar.gz.sha256' \
+            --dir "$tmp"
+          (cd "$tmp" && sha256sum -c unslop-x86_64-unknown-linux-gnu.tar.gz.sha256)
+          tar -xzf "$tmp/unslop-x86_64-unknown-linux-gnu.tar.gz" -C "$tmp"
+          install -m 755 "$tmp/unslop" "$HOME/.local/bin/unslop"
+
+      - name: Add unslop to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Collect changed Markdown files
         id: changed
