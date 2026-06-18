@@ -31,22 +31,43 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Resolve unslop revision
-        id: unslop-rev
+      - name: Resolve unslop release tag
+        id: unslop-rel
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          sha=$(git ls-remote https://github.com/MH4GF/unslop HEAD | cut -f1)
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          tag=$(gh release view --repo MH4GF/unslop --json tagName --jq .tagName)
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - name: Cache unslop binary
         id: cache-unslop
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
-          path: ~/.cargo/bin/unslop
-          key: unslop-${{ runner.os }}-${{ steps.unslop-rev.outputs.sha }}
+          path: ~/.local/bin/unslop
+          key: unslop-${{ runner.os }}-${{ steps.unslop-rel.outputs.tag }}
 
-      - name: Install unslop
+      - name: Download unslop binary
         if: steps.cache-unslop.outputs.cache-hit != 'true'
-        run: cargo install --git https://github.com/MH4GF/unslop --rev ${{ steps.unslop-rev.outputs.sha }} --locked
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UNSLOP_TAG: ${{ steps.unslop-rel.outputs.tag }}
+        run: |
+          set -euo pipefail
+          archive=unslop-x86_64-unknown-linux-gnu.tar.gz
+          tmpdir=$(mktemp -d)
+          gh release download "$UNSLOP_TAG" \
+            --repo MH4GF/unslop \
+            --pattern "$archive" \
+            --pattern "${archive}.sha256" \
+            --dir "$tmpdir"
+          (cd "$tmpdir" && shasum -a 256 -c "${archive}.sha256")
+          mkdir -p "$HOME/.local/bin"
+          tar -xzf "$tmpdir/$archive" -C "$HOME/.local/bin" unslop
+          chmod +x "$HOME/.local/bin/unslop"
+
+      - name: Add unslop to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Collect changed Markdown files
         id: changed
