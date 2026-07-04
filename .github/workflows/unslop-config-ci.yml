@@ -1,0 +1,85 @@
+name: Unslop Config CI
+
+on:
+  push:
+    paths:
+      - unslop/**
+      - .github/workflows/unslop-config-ci.yml
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-prh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Resolve unslop release tag
+        id: unslop-rel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(gh release view --repo MH4GF/unslop --json tagName --jq .tagName)
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Cache unslop binary
+        id: cache-unslop
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ~/.local/bin/unslop
+          key: unslop-${{ runner.os }}-${{ steps.unslop-rel.outputs.tag }}
+
+      - name: Download unslop binary
+        if: steps.cache-unslop.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UNSLOP_TAG: ${{ steps.unslop-rel.outputs.tag }}
+        run: |
+          set -euo pipefail
+          archive=unslop-x86_64-unknown-linux-gnu.tar.gz
+          tmpdir=$(mktemp -d)
+          gh release download "$UNSLOP_TAG" \
+            --repo MH4GF/unslop \
+            --pattern "$archive" \
+            --pattern "${archive}.sha256" \
+            --dir "$tmpdir"
+          (cd "$tmpdir" && shasum -a 256 -c "${archive}.sha256")
+          mkdir -p "$HOME/.local/bin"
+          tar -xzf "$tmpdir/$archive" -C "$HOME/.local/bin" unslop
+          chmod +x "$HOME/.local/bin/unslop"
+
+      - name: Add unslop to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      # unslop は rule file の load 失敗を警告のみで素通りするため、
+      # 「違反 fixture が検出される = rule が load できている」を正とする
+      - name: Smoke test prh.yml
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/textlintrc.json" <<EOF
+          {
+            "rules": {
+              "prh": {
+                "rulePaths": ["$GITHUB_WORKSPACE/unslop/prh.yml"]
+              }
+            }
+          }
+          EOF
+
+          printf 'これは tx をリソースとして消費するテストです。\n' > "$RUNNER_TEMP/violation.md"
+          if unslop -c "$RUNNER_TEMP/textlintrc.json" --no-color "$RUNNER_TEMP/violation.md" > "$RUNNER_TEMP/out.txt" 2>&1; then
+            echo "::error::violation fixture が検出されなかった。prh.yml が load できていない可能性がある"
+            cat "$RUNNER_TEMP/out.txt"
+            exit 1
+          fi
+          if grep -q "failed to load prh" "$RUNNER_TEMP/out.txt"; then
+            echo "::error::prh.yml の load に失敗した"
+            cat "$RUNNER_TEMP/out.txt"
+            exit 1
+          fi
+
+          printf 'これはトランザクションのテストです。\n' > "$RUNNER_TEMP/clean.md"
+          unslop -c "$RUNNER_TEMP/textlintrc.json" --no-color "$RUNNER_TEMP/clean.md"
