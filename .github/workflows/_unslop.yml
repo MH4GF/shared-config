@@ -31,6 +31,17 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Fetch shared prh.yml
+        run: |
+          set -euo pipefail
+          if [ -f prh.yml ]; then
+            echo "repo-local prh.yml があるため shared 版の取得をスキップ"
+            exit 0
+          fi
+          curl -fsSL --retry 3 \
+            https://raw.githubusercontent.com/MH4GF/shared-config/main/unslop/prh.yml \
+            -o prh.yml
+
       - name: Resolve unslop release tag
         id: unslop-rel
         env:

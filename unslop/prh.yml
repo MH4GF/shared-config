@@ -1,0 +1,87 @@
+# unslop (prh) の共通 rule 定義
+version: 1
+
+rules:
+  # 名詞
+  - expected: トランザクション
+    pattern: /\btx\b/i
+  - expected: コネクション
+    pattern: /\bconn\b/i
+  - expected: リトライ
+    pattern: /\bretry\b/i
+  - expected: ワーカー
+    pattern: /\bworker\b/i
+  - expected: トリガー
+    pattern: /\btrigger\b/i
+  - expected: 指摘事項
+    pattern: /\bfindings\b/i
+  - expected: レビュアー
+    pattern: /\breviewer\b/i
+  - expected: カスタム
+    pattern: /\bcustom\b/i
+  - expected: ツール
+    pattern: /\btool\b/i
+  - expected: アクセス
+    pattern: /\baccess\b/i
+  - expected: トークン
+    pattern: /\btoken\b/i
+  - expected: スコープ
+    pattern: /\bscope\b/i
+  - expected: セクション
+    pattern: /§/
+  - expected: オンボーディング
+    pattern: /\bonboarding\b/i
+  - expected: 秘匿情報
+    pattern: /\bcredentials?\b/i
+  - expected: フラグ
+    pattern: /\bflags?\b/i
+  - expected: レポート
+    pattern: /\breport\b/i
+  - expected: 種類 / 構成 / 派生形
+    pattern: /\bvariants?\b/i
+
+  # 動詞
+  - expected: スキップ
+    pattern: /\bskip\b/i
+  - expected: ディスパッチ
+    pattern: /\bdispatch\b/i
+  - expected: デプロイ
+    pattern: /\bdeploy\b/i
+  - expected: コミット
+    pattern: /\bcommit\b/i
+  - expected: なりすます
+    pattern: /\bimpersonate\b/i
+  - expected: 読む / 使う / 利用する / 参照する 等
+    pattern: /消費(?=する|され|させ|し[てた])/
+  - expected: 除去
+    pattern: /\bevict\b/i
+
+  # 形容詞・副詞
+  - expected: 一律
+    pattern: /\bblanket\b/i
+  - expected: 妥当
+    pattern: /\blegitimate\b/i
+  - expected: 情報通知のみ
+    pattern: /\binformational only\b/i
+  - expected: 冪等
+    pattern: /\bidempotent\b/i
+  - expected: 実行中
+    pattern: /\bin-flight\b/i
+
+  # 比喩・造語
+  - expected: デッドロックで中断された側
+    pattern: /\bdeadlock victim\b/i
+  - expected: 掃き出し処理
+    pattern: /\bmop-up\b/i
+  - expected: 外側のループ
+    pattern: /\bouter loop\b/i
+
+  # 経緯ラベル (docs / コメントから削除する。履歴は git で追える)
+  - expected: コメントから削除する (履歴は git で追える)
+    pattern: /経緯[:：]/
+  - expected: コメントから削除する (履歴は git で追える)
+    pattern: /廃止理由[:：]/
+  - expected: コメントから削除する (履歴は git で追える)
+    pattern: /旧仕様[:：]/
+  - expected: コメントから削除する (履歴は git で追える)
+    pattern: /\bWhy removed\b/i
