@@ -1,9 +1,4 @@
-# unslop (prh) の共通 rule 定義。MH4GF/works と MH4GF/claude-code の両方から使う。
-#
-# 利用側:
-# - CI: _unslop.yml (reusable workflow) が caller repo に repo-local prh.yml が
-#   ない場合、この file を raw URL で取得して使う
-# - ローカル (unslop-guard hook): raw URL から TTL 付きで cache して使う
+# unslop (prh) の共通 rule 定義
 version: 1
 
 rules:
